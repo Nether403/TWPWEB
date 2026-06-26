@@ -92,6 +92,6 @@ build works with no env set. Variables:
 
 ## Status
 
-Phase 5 — Alpha. The spec at `.kiro/specs/witness-protocol-portal/`
+Phase 5 — Beta (v0.9). The spec at `.kiro/specs/witness-protocol-portal/`
 (requirements → design → tasks) is the authoritative source for scope and
 progress.

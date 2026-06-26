@@ -428,7 +428,7 @@ export default function App() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
           <span className="uppercase tracking-widest text-[10px] font-mono">
-            Alpha Phase 5 &bull; Governed Runtime G_5.2
+            Phase 5 &mdash; Beta (v0.9) &bull; Governed Runtime G_5.2
           </span>
         </div>
       </div>

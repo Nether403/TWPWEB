@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 // Current project phase (Req 3.1). Mirrors the footer's PHASE_STATUS.
-const PHASE_STATUS = "Phase 5 — Alpha";
+const PHASE_STATUS = "Phase 5 — Beta (v0.9)";
 
 /**
  * The six Audience entry paths shown on the landing page (Req 3.2). Each links

@@ -72,7 +72,7 @@ describe("SiteFooter (Req 2.4)", () => {
     ).toBeInTheDocument();
 
     // Current project phase status.
-    expect(within(footer).getByText(/Phase 5 — Alpha/i)).toBeInTheDocument();
+    expect(within(footer).getByText(/Phase 5 — Beta/i)).toBeInTheDocument();
 
     // Legal / privacy links.
     expect(

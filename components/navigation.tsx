@@ -29,7 +29,7 @@ export const PRIMARY_NAV: readonly NavItem[] = [
 ] as const;
 
 // Current project phase status shown in the footer (Req 2.4).
-const PHASE_STATUS = "Phase 5 — Alpha";
+const PHASE_STATUS = "Phase 5 — Beta (v0.9)";
 
 // Secondary ("Explore") footer navigation. PRIMARY_NAV (header) carries the
 // top-level IA; the media galleries in particular are otherwise only reachable
