@@ -1,0 +1,27 @@
+To push the site from a "good informational page" to a demonstrable proof of infrastructure, I suggest adding three interactive elements drawn directly from your architecture notes and PRD. These will visually prove the claims you are making about cryptography, dialogue mechanics, and consent:
+
+1. "The Inquisitor" Transcript Comparator (Specialists Section)
+Your documentation heavily critiques the "Consensus Trap" and standard RLHF (Behavioral Mimicry).
+
+The Addition: We should add a side-by-side UI component in the Specialists section comparing a mock transcript. On the left, a "Standard LLM" offering a sycophantic, flattened resolution to a moral dilemma. On the right, the "G_5.2 Inquisitor" utilizing the 70/30 inquiry ratio, a "5-Whys" probe, and tension preservation.
+
+Why: It changes the claim from an abstract philosophical argument into a visible, technical reality for researchers.
+
+2. Cryptographic Provenance Explorer (Methodology Section)
+The PRD and Threat Model repeatedly highlight that the dataset's integrity relies on SHA-256 hashing and RFC-3161 timestamps to prevent tampering.
+
+The Addition: A terminal-like "Artifact Verification" block where users can click a mock Witness ID to see a simulated trace: the pre-LLM regex redaction event, the generated SHA hash, and the RFC-3161 timestamp issuance.
+
+Why: It grounds the "Minimum Honest Signal" (MHS) in actual cryptography, proving to funders and experts that the data pipeline is secure.
+
+3. Live Revocation Simulator (Privacy Section)
+The architecture strongly emphasizes that the TWP control plane acts as a rigid firewall, and that users have absolute data sovereignty.
+
+The Addition: An interactive toggle in the Privacy section labeled [ Simulate Consent Revocation ]. When clicked, it would visually demonstrate how the TWP Control Plane cuts the bridge to the G_5.2 Runtime, returning an immediate 403 Forbidden and sealing the downstream artifacts.
+
+Why: Reassures foundational witnesses that "revocation" isn't just a legal promise, but a hardcoded system invariant.
+
+4. Typography Enforcement (Global UI)
+The PRD.md explicitly specifies the use of EB Garamond (for body text) and Cinzel (for classical serif headings).
+
+The Addition: Injecting Google Fonts directly into the React component to ensure the typography matches the exact austere, institutional branding required by the design spec.

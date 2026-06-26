@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+/*
+  Theme tokens for the Witness Protocol Portal.
+  "Gravity over gamification": near-black "basalt" and light "paper" themes,
+  no accent hues, no rounded corners, fade-only transitions (Req 18).
+*/
+
+/* basalt = default dark theme: near-black background, off-white foreground (Req 18.2) */
+:root,
+[data-theme="basalt"] {
+  --bg: #0a0a0a;
+  --fg: #ededed;
+  --muted: #9a9a9a;
+  --border: #2a2a2a;
+}
+
+/* paper = light theme alternate (Req 18.3) */
+[data-theme="paper"] {
+  --bg: #f4f1ea;
+  --fg: #14110d;
+  --muted: #5a554c;
+  --border: #d8d2c4;
+}
+
+/*
+  @theme inline maps Tailwind utilities to the live CSS variables above, so
+  the basalt/paper tokens resolve from the active [data-theme] attribute.
+*/
+@theme inline {
+  /* Typography (Req 18.1): EB Garamond body, Cinzel headings, JetBrains Mono labels */
+  --font-body: var(--font-eb-garamond), Georgia, serif;
+  --font-heading: var(--font-cinzel), Georgia, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* Theme colors (no accent hues) */
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  /* No rounded corners anywhere (Req 18) */
+  --radius-xs: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+
+  /* Single fade transition token, within the 0.5–2s band (Req 18.5) */
+  --transition-fade: 1s;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-body);
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  code, kbd, samp, pre {
+    font-family: var(--font-mono);
+  }
+
+  /*
+    Fade-only motion (Req 18.5): transition color/background/border/opacity over
+    the single fade token. No transform-based (bounce/spin/scale) utilities are
+    defined or used in the Portal.
+  */
+  *,
+  *::before,
+  *::after {
+    transition-property: color, background-color, border-color, opacity;
+    transition-duration: var(--transition-fade);
+    transition-timing-function: ease;
+  }
+
+  /* Visible focus indicator in both themes (Req 19.4) */
+  :focus-visible {
+    outline: 2px solid var(--color-fg);
+    outline-offset: 2px;
+  }
+
+  /*
+    Skip-to-content link (Req 19.2): the first focusable element on every page,
+    letting keyboard/AT users bypass the persistent header and land on the main
+    content in a logical focus order. Visually hidden until focused (positioned
+    off-screen via `top`, not a transform — Req 18.5 forbids transform motion),
+    then themed with the bg/fg tokens so it is legible in both basalt and paper.
+  */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 100;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    border: 2px solid var(--color-fg);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+  .skip-link:focus {
+    top: 1rem;
+  }
+
+  /* The main-content wrapper is a programmatic focus target for the skip link;
+     it should not show a focus outline when reached that way. */
+  #main-content:focus {
+    outline: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms;
+    }
+  }
+}
+
+/*
+  Content_Renderer body styling (Req 5.2). The loader emits sanitized HTML for
+  each markdown item; Tailwind's preflight strips default list/quote styling, so
+  re-establish legible, theme-aware structure for headings, paragraphs, lists,
+  emphasis, links, and block quotes. No accent hues, no rounded corners (Req 18).
+*/
+@layer components {
+  .content-body {
+    font-family: var(--font-body);
+    line-height: 1.75;
+    color: var(--color-fg);
+  }
+
+  .content-body h1,
+  .content-body h2,
+  .content-body h3,
+  .content-body h4,
+  .content-body h5,
+  .content-body h6 {
+    font-family: var(--font-heading);
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .content-body h1 { font-size: 2rem; }
+  .content-body h2 { font-size: 1.6rem; }
+  .content-body h3 { font-size: 1.3rem; }
+  .content-body h4,
+  .content-body h5,
+  .content-body h6 { font-size: 1.1rem; }
+
+  .content-body p {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  .content-body ul,
+  .content-body ol {
+    margin: 0 0 1.25rem;
+    padding-left: 1.5rem;
+  }
+
+  .content-body ul { list-style: disc; }
+  .content-body ol { list-style: decimal; }
+  .content-body li { margin-bottom: 0.5rem; }
+
+  .content-body a {
+    color: var(--color-fg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .content-body a:hover { color: var(--color-muted); }
+
+  .content-body strong { font-weight: 700; }
+  .content-body em { font-style: italic; }
+
+  .content-body blockquote {
+    margin: 0 0 1.25rem;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    border-left: 2px solid var(--color-border);
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .content-body code {
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+    background-color: var(--color-border);
+    padding: 0.1em 0.35em;
+  }
+
+  .content-body pre {
+    font-family: var(--font-mono);
+    background-color: var(--color-border);
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0 0 1.25rem;
+  }
+  .content-body pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .content-body img {
+    max-width: 100%;
+    height: auto;
+  }
+}
