@@ -1,5 +1,5 @@
 ---
-Audience_Tags: [researcher, contributor]
+Audience_Tags: [contributor]
 ---
 ### Inheriting the Inferno: Why High-Signal Testimony is the Only Firewall for AGI
 

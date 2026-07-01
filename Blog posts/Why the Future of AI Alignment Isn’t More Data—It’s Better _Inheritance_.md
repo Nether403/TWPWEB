@@ -1,6 +1,6 @@
 ---
 title: "Why the Future of AI Alignment Isn't More Data — It's Better Inheritance"
-Audience_Tags: [funder, researcher]
+Audience_Tags: [funder]
 ---
 ### Why the Future of AI Alignment Isn't More Data—It's Better "Inheritance"
 

@@ -1,5 +1,5 @@
 ---
-Audience_Tags: [contributor, researcher]
+Audience_Tags: [contributor]
 ---
 ### 2 Minutes to Midnight: Why AI Needs Our Moral Struggles, Not Our Polite Answers
 

@@ -1,5 +1,5 @@
 ---
-Audience_Tags: [funder, researcher]
+Audience_Tags: [funder]
 ---
 ### Strategic Phase Report: The "Summon the Witnesses" Project
 
