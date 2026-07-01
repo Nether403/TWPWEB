@@ -1,5 +1,15 @@
 # Design Document
 
+> **Amendment — 2026-07-01: audiences collapsed six → three.** The
+> `Audience` union is now `contributor | researcher | funder`
+> (`content/types.ts`). `contributor` absorbs Potential_Witness +
+> Invited_Professional; `researcher` absorbs Researcher + Philosopher +
+> Legal_Expert; `funder` is Investor. The former persona names remain accepted
+> as front-matter aliases in the Content Loader, so tagged content still
+> resolves. Read the "six audiences" references below through this mapping; the
+> `Audience_Router` design is otherwise unchanged (one static page per audience,
+> tag-based surfacing, real actions link out to the Platform).
+
 ## Overview
 
 The Witness Protocol Portal is a statically generated Next.js website that consolidates the Foundation's existing assets — markdown blog posts, articles, papers, reports, PDFs, PNG infographics, PPTX slide decks, and MP4 videos — into a single, austere, publicly accessible information hub. It serves six audiences (Potential_Witness, Invited_Professional, Researcher, Philosopher, Legal_Expert, Investor), routes each to relevant content and calls to action, and carries forward four interactive demonstrations prototyped in the draft files (`draft_witness_protocol_site.tsx`, `draft2_witness_protocol_site.tsx`): the Inquisitor transcript comparator, the cryptographic provenance explorer, the consent revocation simulator, and the Gate self-assessment simulator.

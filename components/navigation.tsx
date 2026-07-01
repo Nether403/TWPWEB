@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ThemeController } from "./theme-controller";
 import { MobileMenu } from "./mobile-menu";
+import { ECOSYSTEM_LINKS, SOCIAL_LINKS } from "@/lib/external-links";
 
 /**
  * Navigation_System (Req 2).
@@ -16,6 +17,8 @@ import { MobileMenu } from "./mobile-menu";
 export interface NavItem {
   label: string;
   href: string;
+  /** External links (other origins) render as `<a>` with target/rel, not `next/link`. */
+  external?: boolean;
 }
 
 // Primary navigation entries (Req 2.2).
@@ -52,6 +55,16 @@ const FOOTER_SECTIONS: readonly { heading: string; items: NavItem[] }[] = [
       { label: "Provenance explorer", href: "/demos/provenance" },
       { label: "Revocation simulator", href: "/demos/revocation" },
       { label: "Gate self-assessment", href: "/demos/gate" },
+    ],
+  },
+  // The wider ecosystem + the Foundation's presence elsewhere. External links
+  // (other origins) so a visitor can reach the sibling sites and social pages
+  // from any page. Sourced from the shared external-links layer.
+  {
+    heading: "Elsewhere",
+    items: [
+      ...ECOSYSTEM_LINKS.map((l) => ({ label: l.label, href: l.href, external: true })),
+      ...SOCIAL_LINKS.map((l) => ({ label: l.label, href: l.href, external: true })),
     ],
   },
 ];
@@ -113,15 +126,27 @@ export function SiteFooter() {
               <span className="font-heading text-xs uppercase tracking-[0.2em] text-fg">
                 {section.heading}
               </span>
-              {section.items.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="font-mono text-xs uppercase tracking-[0.2em] text-muted hover:text-fg"
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {section.items.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-mono text-xs uppercase tracking-[0.2em] text-muted hover:text-fg"
+                  >
+                    {item.label} ↗
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="font-mono text-xs uppercase tracking-[0.2em] text-muted hover:text-fg"
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
             </div>
           ))}
         </nav>

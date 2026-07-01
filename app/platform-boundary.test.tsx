@@ -20,7 +20,7 @@ import {
 // Two halves, both asserting the actual rendered output / on-disk routes rather
 // than internal state:
 //
-//   1. Link-outs — the landing page, the six audience journeys, the Gate
+//   1. Link-outs — the landing page, the three audience journeys, the Gate
 //      simulator, the Inquisitor comparator, and `/participate` all render
 //      OUTBOUND links to the expected live-Platform surfaces sourced from the
 //      shared link-out layer (lib/platform-links). Every such link is an
@@ -62,7 +62,7 @@ describe("Landing page Platform link-outs (Req 1.5)", () => {
 });
 
 describe("Audience journeys Platform link-outs (Req 1.3, 1.4, 1.5, 1.6)", () => {
-  it("provides a distinct journey config for each of the six audiences", () => {
+  it("provides a distinct journey config for each of the three audiences", () => {
     for (const audience of AUDIENCES) {
       expect(AUDIENCE_CONFIG[audience]?.id).toBe(audience);
     }
@@ -81,15 +81,15 @@ describe("Audience journeys Platform link-outs (Req 1.3, 1.4, 1.5, 1.6)", () => 
   });
 
   it("surfaces the expected Platform handoffs across the journeys", () => {
-    // Aggregate every external CTA href across the six journeys.
+    // Aggregate every external CTA href across the three journeys.
     const externalHrefs = new Set(
       AUDIENCES.flatMap((a) =>
         AUDIENCE_CONFIG[a].ctas.filter((c) => c.external).map((c) => c.href),
       ),
     );
-    // Witness/professional journeys link to the Gate intake, the consent
-    // surface, and the reviewer packet (Req 1.3, 1.4, 1.5); researcher and
-    // philosopher journeys link to the real Inquisitor (Req 1.6).
+    // The contributor journey links to the Gate intake, the consent surface,
+    // and the reviewer packet (Req 1.3, 1.4, 1.5); the researcher journey links
+    // to the real Inquisitor (Req 1.6).
     expect(externalHrefs.has(platformLink("gate").href)).toBe(true);
     expect(externalHrefs.has(platformLink("consent").href)).toBe(true);
     expect(externalHrefs.has(platformLink("packet").href)).toBe(true);

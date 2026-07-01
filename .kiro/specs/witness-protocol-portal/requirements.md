@@ -1,5 +1,24 @@
 # Requirements Document
 
+> **Amendment — 2026-07-01: audiences collapsed from six to three.**
+> The six original personas overlapped heavily (Researcher and Philosopher were
+> effectively identical; Potential Witness and Invited Professional differed by
+> one CTA; Legal Expert and Investor mostly routed to the library). They are now
+> collapsed into the three destinations the site actually serves. **This note
+> supersedes every "six audiences" enumeration below** (incl. the Glossary,
+> Req 3.2, Req 4.1, and Req 21.6). The canonical set and the mapping:
+>
+> | Canonical audience (`id`) | Absorbs the former personas | Journey |
+> |---|---|---|
+> | **Contributor** (`contributor`) | Potential Witness, Invited Professional | Participate + Gate intake + reviewer/MHS packet (Platform link-outs) + Gate self-assessment demo (was Req 4.4) |
+> | **Researcher & Scholar** (`researcher`) | Researcher, Philosopher, Legal Expert | Library + real Inquisitor (Platform) + Inquisitor/revocation/provenance demos (was Req 4.5, 4.6) |
+> | **Funder** (`funder`) | Investor | Funding CTA + strategic/funding content (was Req 4.7) |
+>
+> The pre-collapse persona names remain accepted as content front-matter aliases
+> (`content/loader.ts`), so existing `Audience_Tags` keep resolving to the right
+> journey. Code + tests are the source of truth (`content/types.ts`,
+> `lib/audiences.ts`); read the enumerations below through this mapping.
+
 ## Introduction
 
 This document specifies the requirements for the **Witness Protocol Portal**: the public information hub and main landing experience for the Witness Protocol, built in the `TWPWEB` workspace. The Portal transforms the existing collection of draft React components, documentation, blog posts, articles, papers, reports, infographics, slides, and videos into a single, professional, publicly accessible website.

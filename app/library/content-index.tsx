@@ -21,12 +21,9 @@ const TYPES: readonly ContentCategory[] = ["blog", "article", "paper", "report"]
 
 // Human-readable audience labels for the control; values stay the Audience union.
 const AUDIENCE_LABELS: Record<Audience, string> = {
-  "potential-witness": "Potential Witness",
-  "invited-professional": "Invited Professional",
-  researcher: "Researcher",
-  philosopher: "Philosopher",
-  "legal-expert": "Legal Expert",
-  investor: "Investor",
+  contributor: "Contributor",
+  researcher: "Researcher & Scholar",
+  funder: "Funder",
 };
 
 /** Destination route for an item: PDFs preview, markdown renders (Req 6.2). */

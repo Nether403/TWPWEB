@@ -8,22 +8,22 @@
 
 export type ContentCategory = "blog" | "article" | "paper" | "report";
 
-export type Audience =
-  | "potential-witness"
-  | "invited-professional"
-  | "researcher"
-  | "philosopher"
-  | "legal-expert"
-  | "investor";
+export type Audience = "contributor" | "researcher" | "funder";
 
-/** The six audience journeys, in canonical order (Req 4.1, 21.6). */
+/**
+ * The three audience journeys, in canonical order (Req 4.1, 21.6).
+ *
+ * These collapse the earlier six personas into the three real destinations the
+ * site actually serves: contribute testimony (witnesses + invited
+ * professionals), study & scrutinize the work (researchers, philosophers, legal
+ * experts), and fund the mission (funders/investors). The older, finer-grained
+ * persona names remain accepted as front-matter aliases in the loader, so
+ * existing tagged content keeps surfacing under the right journey.
+ */
 export const AUDIENCES: readonly Audience[] = [
-  "potential-witness",
-  "invited-professional",
+  "contributor",
   "researcher",
-  "philosopher",
-  "legal-expert",
-  "investor",
+  "funder",
 ];
 
 export interface ContentItem {

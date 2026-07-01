@@ -156,30 +156,61 @@ const FOLDERS: { dir: string; category: ContentCategory }[] = [
   { dir: "reports", category: "report" },
 ];
 
+/**
+ * Deliberate audience tags for PDF binaries. PDFs carry no front-matter, so
+ * unlike markdown they cannot declare `Audience_Tags` themselves; this map is
+ * their equivalent, keyed by exact file name. An unmapped PDF falls back to all
+ * audiences so a newly-added binary stays broadly discoverable until curated.
+ *
+ * ponytail: a hand-maintained map is the lazy alternative to a sidecar metadata
+ * file per PDF — add an entry when a PDF is added or its audience changes.
+ * Upgrade path: per-file `.meta.json` sidecars if the set grows unwieldy.
+ */
+const PDF_AUDIENCE_TAGS: Record<string, Audience[]> = {
+  "Architecting Moral Inheritance_ The Witness Protocol and the Shift from Behavioral Mimicry to Process-Supervised AI Alignment.pdf":
+    ["researcher"],
+  "Witness Protocol as High-Signal Alignment Data Infrastructure.pdf": [
+    "researcher",
+    "funder",
+  ],
+  "Witness Protocol in the AI Alignment Landscape.pdf": ["researcher", "funder"],
+  "Witness_Protocol_Whitepaper_v0_9.pdf": ["researcher", "funder"],
+  "witness-protocol-alignment-paper.pdf": ["researcher"],
+};
+
 // ---------------------------------------------------------------------------
 // Audience tag resolution (Req 21.4, 21.5)
 // ---------------------------------------------------------------------------
 
 // Friendly aliases authors might write in front-matter, normalized to the union.
+// The three canonical audiences each accept the older, finer-grained persona
+// names as aliases (so content tagged before the 6→3 collapse still resolves):
+//   contributor ← witnesses + invited professionals
+//   researcher  ← researchers, philosophers, legal experts
+//   funder      ← funders / investors
 const AUDIENCE_ALIASES: Record<string, Audience> = {
-  "potential-witness": "potential-witness",
-  witness: "potential-witness",
-  "potential-participant": "potential-witness",
-  participant: "potential-witness",
-  "invited-professional": "invited-professional",
-  professional: "invited-professional",
-  invited: "invited-professional",
+  // Contributor — witnesses and invited professionals.
+  contributor: "contributor",
+  "potential-witness": "contributor",
+  witness: "contributor",
+  "potential-participant": "contributor",
+  participant: "contributor",
+  "invited-professional": "contributor",
+  professional: "contributor",
+  invited: "contributor",
+  // Researcher — researchers, philosophers, and legal experts (study & scrutiny).
   researcher: "researcher",
   research: "researcher",
   scholar: "researcher",
-  philosopher: "philosopher",
-  philosophy: "philosopher",
-  "legal-expert": "legal-expert",
-  legal: "legal-expert",
-  lawyer: "legal-expert",
-  investor: "investor",
-  funder: "investor",
-  funding: "investor",
+  philosopher: "researcher",
+  philosophy: "researcher",
+  "legal-expert": "researcher",
+  legal: "researcher",
+  lawyer: "researcher",
+  // Funder — funders / investors.
+  funder: "funder",
+  investor: "funder",
+  funding: "funder",
 };
 
 /** Normalize one raw tag value to an Audience, or null when unrecognized. */
@@ -208,13 +239,13 @@ function toStringList(raw: unknown): string[] {
  * tolerating key variations (`audience_tags`, `audienceTags`), array or
  * comma/semicolon-string values, and friendly aliases (Req 21.4).
  *
- * ponytail: when no valid tag is declared, the default set is ALL SIX audiences
- * rather than a single catch-all. The catch-all alternative is one line shorter
- * but would leave five journeys unable to surface untagged content, violating
- * "remains discoverable through at least one Audience journey" (Req 21.5) for
- * everyone except the catch-all audience. Tagging broadly keeps every item
- * reachable from every journey; the upgrade path is per-folder default sets if
- * broad tagging proves too noisy for a given audience.
+ * ponytail: when no valid tag is declared, the default set is ALL THREE
+ * audiences rather than a single catch-all. The catch-all alternative is one
+ * line shorter but would leave two journeys unable to surface untagged content,
+ * violating "remains discoverable through at least one Audience journey"
+ * (Req 21.5) for everyone except the catch-all audience. Tagging broadly keeps
+ * every item reachable from every journey; the upgrade path is per-folder
+ * default sets if broad tagging proves too noisy for a given audience.
  */
 export function resolveAudienceTags(
   frontMatter: Record<string, unknown>,
@@ -320,7 +351,7 @@ export function loadAllContent(rootDir: string = process.cwd()): LoadResult {
           summary: fileNameToTitle(fileName),
           type: category === "article" ? "paper" : category,
           format: "pdf",
-          audienceTags: [...AUDIENCES], // untagged binaries stay broadly discoverable
+          audienceTags: PDF_AUDIENCE_TAGS[fileName] ?? [...AUDIENCES], // curated map; unmapped binaries stay broadly discoverable
           sourcePath,
           assetPath: `/assets/${category}/${fileName}`,
         });

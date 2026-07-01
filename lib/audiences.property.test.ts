@@ -4,7 +4,7 @@
 // surfacing (task 7.3).
 //
 // Property 9 has two halves:
-//   (a) Journey invariant — each of the six audiences resolves a distinct
+//   (a) Journey invariant — each of the three audiences resolves a distinct
 //       AudienceConfig (distinct ids AND distinct titles) carrying at least one
 //       CTA (Req 4.1, 4.2).
 //   (b) Tag-based surfacing — for any array of ContentItems and any audience,
@@ -30,9 +30,9 @@ import {
 
 describe("Property 9 (a): audience journey invariant", () => {
   // Feature: witness-protocol-portal, Property 9: Audience journey invariant and tag-based surfacing
-  it("resolves a distinct config with at least one CTA for each of the six audiences", () => {
-    // There are exactly six canonical audiences (Req 4.1, 21.6).
-    expect(AUDIENCES.length).toBe(6);
+  it("resolves a distinct config with at least one CTA for each of the three audiences", () => {
+    // There are exactly three canonical audiences (Req 4.1, 21.6).
+    expect(AUDIENCES.length).toBe(3);
 
     const configs: AudienceConfig[] = AUDIENCES.map((a) => {
       const config = AUDIENCE_CONFIG[a];

@@ -1,3 +1,6 @@
+---
+Audience_Tags: [researcher, contributor]
+---
 ### Inheriting the Inferno: Why High-Signal Testimony is the Only Firewall for AGI
 
 ##### 1\. The "Digital Exhaust" Problem: Why AI Parenting is Failing

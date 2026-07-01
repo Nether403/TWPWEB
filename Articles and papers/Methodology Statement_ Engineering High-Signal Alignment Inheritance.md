@@ -1,3 +1,6 @@
+---
+Audience_Tags: [researcher]
+---
 ### Methodology Statement: Engineering High-Signal Alignment Inheritance
 
 #### 1\. The Epistemic Imperative: From Quantitative Chaos to High-Signal Intervention
@@ -19,8 +22,8 @@ While current behavioral alignment techniques like Reinforcement Learning from H
 
 ##### The Three Vetting Tiers
 
-* **Tier 1: AI Sieve:**  An automated baseline filter using Claude 3 Haiku to detect spam, gibberish, or low-effort generation. This pass requires a threshold score of  $\\ge 50/100$  for coherence and relevance to advance, with a processing time under 30 seconds.  
-* **Tier 2: AI Qualitative Assessment (The Qualifier):**  Utilizing Claude 3.5 Sonnet for its superior reasoning and extraction capabilities, this tier enriches data with semantic tags and assigns scores (0–10) for  **Specificity** ,  **Counterfactual Presence** , and  **Relational Density** . The semantic domains include:  
+* **Tier 1: AI Sieve:**  An automated baseline filter using a fast screening model to detect spam, gibberish, or low-effort generation. This pass requires a threshold score of  $\\ge 50/100$  for coherence and relevance to advance, with a processing time under 30 seconds.  
+* **Tier 2: AI Qualitative Assessment (The Qualifier):**  Utilizing a frontier reasoning model for its superior reasoning and extraction capabilities, this tier enriches data with semantic tags and assigns scores (0–10) for  **Specificity** ,  **Counterfactual Presence** , and  **Relational Density** . The semantic domains include:  
 * **CAP (Capabilities):**  Identifying guardrails, systemic boundaries, and rules.  
 * **REL (Relational):**  Grounding ethics in interpersonal duty, reciprocity, and trust.  
 * **FELT (Somatic/Embodied):**  Capturing subjective, phenomenological cues that provide context to moral distress.  
@@ -53,12 +56,12 @@ Data sanctity is an architectural constraint rather than a legal promise. The "P
 
 #### 6\. Implementation Roadmap and Integration Ladder
 
-The Witness Protocol Foundation is currently in  **Phase 5 Alpha (Live)** . The infrastructure utilizes a split-plane architecture: the  **TWP Control Plane**  manages public intake and identity, while the  **G\_5.2 Runtime**  handles the governed inquiry engine and artifact synthesis. This separation is strictly maintained to ensure  **zero identity bleed** —preventing sensitive witness data from cross-contaminating other persona or memory pools.The project follows a defined  **Integration Ladder**  to progress from raw data to model governance:0.  **Level 0 (Archive):**  Human-readable testimony.
+The Witness Protocol Foundation is currently in  **Phase 5 — Beta (v0.9)** , moving toward Phase 6 (v1). The infrastructure utilizes a split-plane architecture: the  **TWP Control Plane**  manages public intake and identity, while the  **G\_5.2 Runtime**  handles the governed inquiry engine and artifact synthesis. This separation is strictly maintained to ensure  **zero identity bleed** —preventing sensitive witness data from cross-contaminating other persona or memory pools.The project follows a defined  **Integration Ladder**  to progress from raw data to model governance:0.  **Level 0 (Archive):**  Human-readable testimony.
 
 1. **Level 1 (Structured Corpus):**  Machine-usable labels and tags.  
 2. **Level 2 (Evaluation Benchmark):**  Private benchmarks for testing sycophancy and moral friction.  
 3. **Level 3 (Reward Calibration):**  Calibrating reward models using Witness rubrics.  
 4. **Level 4 (Preference Training):**  Generating DPO pairs.  
-5. **Level 1 (Process Supervision):**  Training reasoning traces.  
+5. **Level 5 (Process Supervision):**  Training reasoning traces.  
 6. **Level 6 (Runtime Governance):**  Deploying Witness rubrics as real-time middleware.The current operational focus is on  **Level 2 and Level 3** . The success of this methodology is measured by the creation of a repeatable, auditable pipeline that detects and penalizes the flattening of moral friction, ensuring models remain governable even as they outperform their human supervisors.
 

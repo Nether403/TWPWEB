@@ -1,3 +1,6 @@
+---
+Audience_Tags: [contributor]
+---
 ### The Witness Protocol: A Participant Information Handbook
 
 #### 1\. Welcome to the Mission: Why Your Voice Matters
@@ -10,7 +13,7 @@ Participating in the Protocol is a structured curation journey. We do not seek a
 
 ##### The Three Gates of Entry
 
-Every reflection is evaluated to ensure it meets our standards for specificity and ethical depth.| Gate Name | Evaluator | Quality Threshold || \------ | \------ | \------ || **Tier 1: AI Sieve** | Automated (Claude 3 Haiku) | **Specificity Floor:**  Rejects abstract generalities or low-effort platitudes in favor of concrete particulars. || **Tier 2: Qualitative Qualifier** | Automated (Claude 3.5 Sonnet) | **Counterfactual Presence:**  Identifies reasoning that considers "If X had been different, then Y," ensuring depth of thought. || **Tier 3: Human Curation Council** | Dual-Rater Human Experts | **Ethical Integrity:**  A blind review where two experts must reach high agreement ( **Cohen’s Kappa κ ≥ 0.8** ) on the testimony’s moral value. |
+Every reflection is evaluated to ensure it meets our standards for specificity and ethical depth.| Gate Name | Evaluator | Quality Threshold || \------ | \------ | \------ || **Tier 1: AI Sieve** | Automated (fast screening model) | **Specificity Floor:**  Rejects abstract generalities or low-effort platitudes in favor of concrete particulars. || **Tier 2: Qualitative Qualifier** | Automated (frontier reasoning model) | **Counterfactual Presence:**  Identifies reasoning that considers "If X had been different, then Y," ensuring depth of thought. || **Tier 3: Human Curation Council** | Dual-Rater Human Experts | **Ethical Integrity:**  A blind review where two experts must reach high agreement ( **Cohen’s Kappa κ ≥ 0.8** ) on the testimony’s moral value. |
 
 ##### The Instrument: A Socratic Inquiry
 
@@ -26,11 +29,11 @@ We believe that sharing deep moral reflections requires a sanctuary of safety. T
 
 ##### How It Works: The PII Pipeline
 
-Before your testimony enters the research environment, it undergoes a three-pass pipeline to strip  **Personally Identifiable Information (PII)** :
+Before your testimony enters the research environment, it undergoes two automated passes, finalized by a one-time human curation review, to strip  **Personally Identifiable Information (PII)** :
 
 1. **Pass 1: Regex Stripping:**  Local software instantly scans for and removes hard-format identifiers like emails, SSNs, and phone numbers.  
 2. **Pass 2: NER Classification:**  Our "Named Entity Recognition" tool identifies potential "candidates" for names or locations.  **Crucially, only these candidates are sent to a classifier for typing—never your full text.**  
-3. **Pass 3: Human Review:**  Final curators manually redact any lingering context clues that could lead to your identification.**The Transformation Sequence:**  
+3. **Human Curation (one-time):**  During the single Human Curation Council review that also decides Gate acceptance, curators manually redact any lingering context clues that could lead to your identification. This human review happens once per witness — it is not a recurring step.**The Transformation Sequence:**  
 * **Raw Testimony:**  "I was born in  **Berlin**  and worked as a surgeon at  **Charité Hospital**  during the crisis."  
 * **Isolated Candidates:**  Berlin, Charité Hospital  
 * **Redacted Archive:**  "I was born in  **REDACTED\_LOCATION**  and worked as a surgeon at  **REDACTED\_INSTITUTION**  during the crisis."Through this process, your identity is vaulted securely while your wisdom is set free to guide future alignment research.
@@ -66,6 +69,6 @@ Most organizations hide their flaws; we believe that research must be  **falsifi
 
 If you have questions about your rights or the status of your testimony, please reach out to our team:
 
-* **Email:**  corpus@thewprotocol.online  
+* **Email:**  corpus@twpf.online  
 * **Address:**  Stichting The Witness Protocol Foundation, NetherlandsThank you for serving as a  **Foundational Witness** . You are not merely a data point; you are a witness to the human condition, helping us build a safer, more aligned future for all.
 

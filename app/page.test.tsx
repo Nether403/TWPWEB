@@ -17,7 +17,7 @@ describe("Landing page primary CTAs (Req 3.3, 3.4)", () => {
     document.documentElement.setAttribute("data-theme", "basalt");
   });
 
-  // Exact accessible-name matches: the investor audience entry blurb also
+  // Exact accessible-name matches: the funder audience entry blurb also
   // contains "support the Foundation", so a loose regex would be ambiguous.
   it("renders all three primary CTAs: participate, read research, fund", () => {
     render(<HomePage />);
@@ -53,7 +53,7 @@ describe("Landing page primary CTAs (Req 3.3, 3.4)", () => {
 });
 
 describe("Landing page audience entry navigation (Req 3.2)", () => {
-  it("renders an entry path linking to each of the six audience journeys", () => {
+  it("renders an entry path linking to each of the three audience journeys", () => {
     render(<HomePage />);
     for (const audience of AUDIENCES) {
       const link = document.querySelector(`a[href="/audience/${audience}"]`);

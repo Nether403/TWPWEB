@@ -39,24 +39,24 @@ const stemArb = fc
   )
   .map((tokens) => safeStem(tokens.join("")));
 
-// Recognized audience values (canonical names + a few friendly aliases) used to
-// build valid front-matter Audience_Tags.
+// Recognized audience values: the three canonical names plus a spread of the
+// friendly aliases (including the pre-collapse persona names) authors might
+// write in front-matter. Every one of these must normalize to a member of the
+// canonical AUDIENCES set, which the property below asserts.
 const audienceValue = fc.constantFrom(
-  "potential-witness",
-  "invited-professional",
+  "contributor",
   "researcher",
-  "philosopher",
-  "legal-expert",
-  "investor",
-  "witness",
-  "professional",
-  "research",
-  "philosophy",
-  "legal",
   "funder",
+  "witness",
+  "invited-professional",
+  "professional",
+  "philosopher",
+  "legal",
+  "investor",
+  "scholar",
 );
 
-// Front-matter mode: no front-matter (-> default all-six tag set), an explicit
+// Front-matter mode: no front-matter (-> default all-three tag set), an explicit
 // recognized tag list, an empty list, or only-unrecognized tags. The latter two
 // also fall back to the default set — every branch yields a non-empty tag set.
 type FrontMatter = string[] | null;

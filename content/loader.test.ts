@@ -56,21 +56,21 @@ import {
 } from "./loader";
 
 describe("resolveAudienceTags", () => {
-  it("defaults to all six audiences when none are declared", () => {
+  it("defaults to all three audiences when none are declared", () => {
     expect(resolveAudienceTags({})).toEqual([...AUDIENCES]);
   });
 
   it("reads an array under the canonical Audience_Tags key", () => {
     expect(resolveAudienceTags({ Audience_Tags: ["researcher", "investor"] })).toEqual([
       "researcher",
-      "investor",
+      "funder",
     ]);
   });
 
   it("tolerates key/casing/separator variations and comma strings", () => {
     expect(resolveAudienceTags({ audienceTags: "Potential Witness, Legal" })).toEqual([
-      "potential-witness",
-      "legal-expert",
+      "contributor",
+      "researcher",
     ]);
   });
 

@@ -1,3 +1,6 @@
+---
+Audience_Tags: [researcher]
+---
 ### Report: Integrating Dialectical Reward Modeling into the Witness Protocol
 
 ##### 1\. Executive Context: The Crisis of Synthetic Consensus

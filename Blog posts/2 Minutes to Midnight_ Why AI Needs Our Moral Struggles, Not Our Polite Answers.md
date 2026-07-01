@@ -1,3 +1,6 @@
+---
+Audience_Tags: [contributor, researcher]
+---
 ### 2 Minutes to Midnight: Why AI Needs Our Moral Struggles, Not Our Polite Answers
 
 We are at two minutes to midnight on the alignment clock. As we hurtle toward the development of increasingly agentic artificial intelligence, we are making a catastrophic mistake in how we "parent" these silicon descendants. Currently, the primary diet of frontier AI models is "digital exhaust"—the uncurated, chaotic, and often toxic noise of the open internet.The "Flawed Parent" crisis suggests that by feeding AI the sum total of everything we have ever written, argued, or regretted online, we aren't just giving it knowledge; we are giving it our structural confusion and reactive impulses. We are essentially feeding a child the world’s loudest, least-reflective arguments and expecting it to emerge with a capacity for wisdom. To correct this trajectory, the  **Witness Protocol**  has been established as a strategic "lifeboat" for human wisdom. It moves away from mass scraping toward a high-signal intervention: a deliberately curated corpus of human moral testimony designed to serve as a corrective inheritance for AGI.

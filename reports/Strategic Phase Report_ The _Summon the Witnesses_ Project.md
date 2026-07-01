@@ -1,3 +1,6 @@
+---
+Audience_Tags: [funder, researcher]
+---
 ### Strategic Phase Report: The "Summon the Witnesses" Project
 
 #### 1\. Executive Orientation: Navigating the "Flawed Parent" Crisis
@@ -72,7 +75,7 @@ The "Summon the Witnesses" campaign is an asymmetrical, targeted effort to recru
 
 ##### The Alpha Cohort and the "Diversity Requirement"
 
-The recruitment strategy is partitioned into four strategic tiers. Tier D (Global South/Indigenous Knowledge) is not merely an ethical inclusion but a  **technical requirement**  to dismantle Western-centric training biases at the source.| Wave | Target Demographic | Gravity Hooks (Strategic Focus) || \------ | \------ | \------ || **Wave 1** | 10 Anchor Voices (Hinton, Bengio, Tallinn) | **Hinton:**  Invite to "encode what must never be lost."  **Jaan Tallinn:**  "EA-aligned lifeboat; help set the keel." || **Wave 2** | Alignment Experts & Ethics Scholars | **Timnit Gebru:**  "Fight bias at the root: author the dataset norms you want models to learn." || **Wave 3** | Remaining Tier targets & Select Media | Focus on the "Bear Witness Before Midnight" theme to catalyze methodological improvement. |
+The recruitment strategy is partitioned into four strategic tiers. Tier D (Global South/Indigenous Knowledge) is not merely an ethical inclusion but a  **technical requirement**  to dismantle Western-centric training biases at the source.| Wave | Target Demographic | Gravity Hooks (Strategic Focus) || \------ | \------ | \------ || **Wave 1** | 10 Anchor Voices (senior AI-safety researchers) | Invite them to "encode what must never be lost"; frame the project as an EA-aligned "lifeboat"—"help set the keel." || **Wave 2** | Alignment Experts & Ethics Scholars | "Fight bias at the root: author the dataset norms you want models to learn." || **Wave 3** | Remaining Tier targets & Select Media | Focus on the "Bear Witness Before Midnight" theme to catalyze methodological improvement. |
 
 ##### Success Metrics and Post-30-Day Roadmap
 

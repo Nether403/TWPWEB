@@ -12,10 +12,11 @@ import {
 /**
  * Audience_Router — dynamic route `/audience/[audience]` (Req 4.1–4.8).
  *
- * One statically generated page per audience (Req 4.1). Each renders its journey
- * config from the shared map (lib/audiences): an intro, ≥1 relevant CTA (Req 4.2,
- * 4.4–4.7), links to the relevant simulated demos, and the Content_Items whose
- * `audienceTags` include this audience, surfaced via `contentForAudience` (Req 4.3).
+ * One statically generated page per audience (Req 4.1) — three after the 6→3
+ * collapse. Each renders its journey config from the shared map (lib/audiences):
+ * an intro, ≥1 relevant CTA (Req 4.2, 4.4–4.7), links to the relevant simulated
+ * demos, and the Content_Items whose `audienceTags` include this audience,
+ * surfaced via `contentForAudience` (Req 4.3).
  *
  * Real-action CTAs (participate, MHS packet, real Inquisitor) link OUT to the
  * Platform via the shared link-out layer (Req 1) and render as `<a href>`;
@@ -25,8 +26,9 @@ import {
  * lets any Visitor reach content for any audience regardless of entry path (Req 4.8).
  */
 
-// Built once at build time; surfaced per-audience by tag membership.
-const ALL_ITEMS: ContentItem[] = loadAllContent().items;
+// One statically generated page per audience (Req 4.1). Content is loaded per
+// render (at build time under static generation) so the surfaced set always
+// reflects the current manifest — no stale module-level snapshot.
 
 /** Destination route for an item: PDFs preview, markdown renders (Req 6.2). */
 function itemHref(item: ContentItem): string {
@@ -61,7 +63,7 @@ export default async function AudiencePage({ params }: PageProps) {
   if (!isAudience(audience)) notFound();
 
   const config = AUDIENCE_CONFIG[audience];
-  const items = contentForAudience(ALL_ITEMS, audience);
+  const items = contentForAudience(loadAllContent().items, audience);
 
   return (
     <main className="mx-auto flex min-h-screen max-w-3xl flex-col gap-12 px-6 py-24">

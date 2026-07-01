@@ -1,7 +1,7 @@
 // lib/audiences.ts
 //
 // Audience_Router config and tag-based content surfacing (design.md
-// "Audience_Router"). The Portal routes each of the six audiences to relevant
+// "Audience_Router"). The Portal routes each of the three audiences to relevant
 // content and calls to action.
 //
 // This module is the single source of truth for the per-audience journey
@@ -72,12 +72,9 @@ export interface AudienceConfig {
 
 /** Human-readable labels for each audience, reused by the route and nav copy. */
 export const AUDIENCE_LABELS: Record<Audience, string> = {
-  "potential-witness": "Potential Witness",
-  "invited-professional": "Invited Professional",
-  researcher: "Researcher",
-  philosopher: "Philosopher",
-  "legal-expert": "Legal Expert",
-  investor: "Investor",
+  contributor: "Contributor",
+  researcher: "Researcher & Scholar",
+  funder: "Funder",
 };
 
 // Internal demo routes (the Portal's own simulated demonstrations).
@@ -115,43 +112,41 @@ function internalCta(label: string, href: string, description: string): CTA {
 }
 
 // ---------------------------------------------------------------------------
-// The six audience journeys (Req 4.1, 4.4–4.7)
+// The three audience journeys (Req 4.1, 4.4–4.7)
+//
+// Collapsed from the earlier six personas into the three destinations the site
+// actually serves. Each journey still surfaces every Platform handoff and demo
+// its constituent personas needed:
+//   contributor ← potential-witness + invited-professional
+//   researcher  ← researcher + philosopher + legal-expert
+//   funder      ← investor
 // ---------------------------------------------------------------------------
 
 export const AUDIENCE_CONFIG: Record<Audience, AudienceConfig> = {
-  // Req 4.4 — participation CTA (link out to the Platform) + Gate_Simulator link.
-  "potential-witness": {
-    id: "potential-witness",
-    title: "For Potential Witnesses",
+  // Req 4.4 — participation + Gate intake + reviewer/MHS packet (link out to the
+  // Platform), plus the Gate self-assessment demo. Serves both individual
+  // witnesses and invited professionals.
+  contributor: {
+    id: "contributor",
+    title: "Contribute your testimony",
     intro:
-      "Your moral struggles — the concrete actions, the paths not taken, the personal stakes — are the high-signal testimony the corpus is built from. Real submission happens on the Platform; here you can read, understand, and self-assess first.",
+      "Your moral struggles — the concrete actions, the paths not taken, the personal stakes — are the high-signal testimony the corpus is built from. Whether you are an individual witness or an invited professional, real submission, the reviewer packet, and consent all live on the Platform; here you can read, understand, and self-assess first.",
     ctas: [
       platformCta("consent", "Participate & manage consent"),
       platformCta("gate", "Submit testimony on the Platform"),
-    ],
-    demoLinks: [GATE_DEMO],
-  },
-
-  // Req 4.4 — invited professionals share the participation CTA + Gate link, and
-  // are routed to the reviewer / MHS packet on the Platform.
-  "invited-professional": {
-    id: "invited-professional",
-    title: "For Invited Professionals",
-    intro:
-      "You have been invited to contribute professional testimony or review. The reviewer packet, intake, and consent all live on the Platform. Use the Gate self-assessment to see what accepted testimony looks like before you submit.",
-    ctas: [
-      platformCta("consent", "Participate & manage consent"),
       platformCta("packet", "Request the reviewer / MHS packet"),
     ],
     demoLinks: [GATE_DEMO],
   },
 
-  // Req 4.5 — links to papers, reports, and the Inquisitor_Comparator.
+  // Req 4.5, 4.6 — study & scrutiny: papers/reports + the real Inquisitor, and
+  // the methodology shown in the Inquisitor, revocation, and provenance demos.
+  // Serves researchers, philosophers, and legal experts.
   researcher: {
     id: "researcher",
-    title: "For Researchers & Scholars",
+    title: "Study & scrutinize the work",
     intro:
-      "The Witness Protocol is an evaluation substrate for AI alignment. Study the papers and reports, then see the methodology demonstrated rather than only described in the Inquisitor comparator.",
+      "The Witness Protocol is an evaluation substrate for AI alignment, and it invites scrutiny. Researchers, philosophers, and legal experts can study the papers and reports, probe the methodology in the Inquisitor comparator rather than only reading about it, and examine the privacy architecture and consent revocation as live demonstrations.",
     ctas: [
       internalCta(
         "Read the papers and reports",
@@ -160,46 +155,13 @@ export const AUDIENCE_CONFIG: Record<Audience, AudienceConfig> = {
       ),
       platformCta("inquisitor", "Engage the real Inquisitor"),
     ],
-    demoLinks: [INQUISITOR_DEMO],
-  },
-
-  // Req 4.5 — philosophers share the researcher journey: papers, reports, Inquisitor.
-  philosopher: {
-    id: "philosopher",
-    title: "For Philosophers",
-    intro:
-      "The Protocol preserves moral friction rather than smoothing it into consensus. Read the papers and reports on pluralistic alignment, then probe the reasoning in the Inquisitor comparator.",
-    ctas: [
-      internalCta(
-        "Read the papers and reports",
-        "/library",
-        "The full research library — papers, reports, and articles, filterable by type and audience.",
-      ),
-      platformCta("inquisitor", "Engage the real Inquisitor"),
-    ],
-    demoLinks: [INQUISITOR_DEMO],
-  },
-
-  // Req 4.6 — privacy architecture content, governance content, Revocation_Simulator.
-  "legal-expert": {
-    id: "legal-expert",
-    title: "For Legal Experts",
-    intro:
-      "Consent revocation is a system invariant, not only a legal promise. Read the privacy architecture and governance material, then watch the revocation cascade and provenance trace as live demonstrations.",
-    ctas: [
-      internalCta(
-        "Read the privacy & governance content",
-        "/library",
-        "Privacy architecture, governance, and the rest of the research library, filterable by audience.",
-      ),
-    ],
-    demoLinks: [REVOCATION_DEMO, PROVENANCE_DEMO],
+    demoLinks: [INQUISITOR_DEMO, REVOCATION_DEMO, PROVENANCE_DEMO],
   },
 
   // Req 4.7 — funding CTA + links to strategic and funding-related content.
-  investor: {
-    id: "investor",
-    title: "For Funders",
+  funder: {
+    id: "funder",
+    title: "Fund the mission",
     intro:
       "The Foundation is a Dutch non-profit, legally isolated from commercial incentives. Contributions are donations or grants toward an auditable public good — never an investment or a financial return. Review the strategy and the integrity guarantees of the pipeline.",
     ctas: [

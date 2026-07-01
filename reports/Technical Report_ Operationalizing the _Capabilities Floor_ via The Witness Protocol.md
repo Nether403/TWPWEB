@@ -1,3 +1,6 @@
+---
+Audience_Tags: [researcher]
+---
 ### Technical Report: Operationalizing the "Capabilities Floor" via The Witness Protocol
 
 #### 1\. The Strategic Pivot: From Guidance to Hard Constraints
@@ -66,7 +69,7 @@ The HCC manages the  **Blind, Dual-Rater Review**  process. All annotations are 
 * **Human Curation Council (HCC):**  Responsible for the final acceptance or rejection of testimony and the verification of CAP/REL/FELT tags.  
 * **Scientific Advisory Council (SAC):**  Responsible for the final adjudication of the Witness-defined floor and the  **reconciliation of low-Kappa signals**  where annotators disagree.  
 * **AI Sieve (Tier 1):**  Automated filtering of low-effort generation and spam.  
-* **The Qualifier (Tier 2):**  Automated semantic tagging and specificity scoring (Claude 3 Opus/Sonnet).  
+* **The Qualifier (Tier 2):**  Automated semantic tagging and specificity scoring (a frontier reasoning model).  
 * **Governance Kernel (G\_5.2):**  Enforcement of the cryptographic audit trail and the immutable logging of all floor modifications.This oversight ensures that the floor is deterministic and that every "tripwire" is built on the most reliable human wisdom available.
 
 #### 6\. Conclusion: A Lifeboat for the Essence of Humanity

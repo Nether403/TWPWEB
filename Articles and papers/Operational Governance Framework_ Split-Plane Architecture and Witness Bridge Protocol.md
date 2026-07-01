@@ -1,3 +1,6 @@
+---
+Audience_Tags: [researcher]
+---
 ### Operational Governance Framework: Split-Plane Architecture and Witness Bridge Protocol
 
 ##### 1\. Strategic Mandate for Split-Plane Architecture

@@ -55,10 +55,28 @@ const STATIC_PAGES: readonly PageMeta[] = [
       "The Witness Protocol is a first-party, consented corpus of high-signal human moral-reasoning testimony, built as an evaluation substrate for AI alignment. Explore the research library, demonstrations, and how to take part.",
   },
   {
+    path: "/about",
+    title: "About & Methodology — The Witness Protocol",
+    description:
+      "What the Witness Protocol is and how it works: the Gate vetting pipeline, the Inquisitor dialogue engine, model-usable alignment outputs, and privacy by architecture — plus the Foundation behind it.",
+  },
+  {
     path: "/library",
     title: "Library — The Witness Protocol",
     description:
       "The Witness Protocol research library — blog posts, articles, papers, and reports, filterable by type and audience.",
+  },
+  {
+    path: "/legal",
+    title: "Legal — The Witness Protocol",
+    description:
+      "Legal notice for Stichting The Witness Protocol Foundation: the entity behind the project, the non-commercial nature of contributions, use of site content, and disclaimers.",
+  },
+  {
+    path: "/privacy",
+    title: "Privacy — The Witness Protocol",
+    description:
+      "How the Witness Protocol Portal handles data (almost none), and how the wider Protocol protects witness testimony: separation of identity from testimony, de-identification, tamper-evidence, and cascading consent revocation.",
   },
   {
     path: "/media/infographics",

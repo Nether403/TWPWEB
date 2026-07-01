@@ -1,3 +1,6 @@
+---
+Audience_Tags: [contributor, researcher]
+---
 ### Your Story, Secured: A Guide to Our Data Privacy Architecture
 
 ##### 1\. The Core Promise: Why Privacy is the Foundation
@@ -21,7 +24,7 @@ Before any testimony enters the Research Corpus, it undergoes a tiered de-identi
 To ensure your story remains private even during AI analysis, we utilize  **Privacy through Isolation** . Standard systems often send entire documents to an external AI to find secrets, which risks exposure. We use a more secure "envelope" strategy.
 
 * **Standard Method:**  The entire story is sent to an external AI to find identifiers. (Risk: Exposure of the full narrative).  
-* **Candidate Isolation:**  Our system identifies a "candidate" (e.g., "Paris" or "John"). It places  *only that single word*  in a metaphorical envelope and sends it to the  **Claude 3.5 Sonnet**  model to ask: "Is this a location or a name?" (Benefit: The context of your story never leaves our server).This architecture ensures that the "Smart Classifier" can do its job without ever seeing the sensitive narrative surrounding the candidates it evaluates.
+* **Candidate Isolation:**  Our system identifies a "candidate" (e.g., "Paris" or "John"). It places  *only that single word*  in a metaphorical envelope and sends it to a  **frontier model**  to ask: "Is this a location or a name?" (Benefit: The context of your story never leaves our server).This architecture ensures that the "Smart Classifier" can do its job without ever seeing the sensitive narrative surrounding the candidates it evaluates.
 
 ##### 5\. The Human Guardrail: Tier 3 Curation
 

@@ -18,15 +18,17 @@
 //   /api/inquisitor  the real Inquisitor dialogue engine     (Req 1.6)
 
 /**
- * Default Platform origin. Matches the Platform's `NEXT_PUBLIC_APP_URL`
- * (`https://thewprotocol.online`).
+ * Default Platform origin: the live control plane (the Gate), served at the
+ * `gate.twpf.online` subdomain. The Portal itself lives at the apex
+ * `twpf.online` and owns no Gate/consent/intake surface, so those handoffs
+ * must target the Gate subdomain, not the Portal's own origin.
  *
  * ponytail: hardcoded production default so the Portal builds and renders
  * without any env set. Ceiling — a wrong origin ships if the env is unset in a
  * non-production environment (e.g. staging). Upgrade path: set
  * `NEXT_PUBLIC_PLATFORM_BASE_URL` per deployment (documented in `.env.example`).
  */
-const DEFAULT_PLATFORM_BASE_URL = "https://thewprotocol.online";
+const DEFAULT_PLATFORM_BASE_URL = "https://gate.twpf.online";
 
 /**
  * The Platform origin, sourced from env with a documented production fallback.

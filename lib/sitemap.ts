@@ -30,7 +30,7 @@ import { loadAllContent } from "@/content/loader";
  * per deployment (documented in `.env.example`). Trailing slashes are trimmed
  * so `siteUrl` joins cleanly.
  */
-const DEFAULT_SITE_URL = "https://thewprotocol.online";
+const DEFAULT_SITE_URL = "https://twpf.online";
 
 export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL
@@ -46,6 +46,7 @@ export const SITE_URL = (
  */
 export const STATIC_ROUTES: readonly string[] = [
   "/",
+  "/about",
   "/library",
   "/media/infographics",
   "/media/videos",
@@ -57,6 +58,8 @@ export const STATIC_ROUTES: readonly string[] = [
   "/participate",
   "/fund",
   "/contact",
+  "/legal",
+  "/privacy",
 ];
 
 /** Join the site origin with a root-relative path into one absolute URL. */

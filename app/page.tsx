@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { loadAllContent, type Audience, type ContentItem } from "@/content/loader";
 import { platformLink } from "@/lib/platform-links";
+import { ECOSYSTEM_LINKS } from "@/lib/external-links";
 
 // Per-page metadata (Req 20.2). The root layout supplies the bare
 // "The Witness Protocol" title as a fallback for any page without its own; the
@@ -18,42 +19,59 @@ export const metadata: Metadata = {
 const PHASE_STATUS = "Phase 5 — Beta (v0.9)";
 
 /**
- * The six Audience entry paths shown on the landing page (Req 3.2). Each links
- * to its audience journey at `/audience/[audience]` (built in task 7.2). The
- * full per-audience CTA/demo config lives there; the landing page only needs a
- * label and a one-line blurb to route a Visitor to the right journey, so this
- * stays a minimal local list rather than duplicating that config.
+ * The three Audience entry paths shown on the landing page (Req 3.2). Each links
+ * to its audience journey at `/audience/[audience]`. The full per-audience
+ * CTA/demo config lives there; the landing page only needs a label and a
+ * one-line blurb to route a Visitor to the right journey, so this stays a
+ * minimal local list rather than duplicating that config.
  */
 const AUDIENCE_ENTRIES: { id: Audience; label: string; blurb: string }[] = [
   {
-    id: "potential-witness",
-    label: "Potential Witness",
-    blurb: "Consider contributing your moral-reasoning testimony to the corpus.",
-  },
-  {
-    id: "invited-professional",
-    label: "Invited Professional",
-    blurb: "Review the Minimum Honest Signal packet and the participation path.",
+    id: "contributor",
+    label: "Contribute testimony",
+    blurb:
+      "Share your moral-reasoning testimony — as an individual witness or an invited professional.",
   },
   {
     id: "researcher",
-    label: "Researcher",
-    blurb: "Read the papers and reports; compare the Inquisitor methodology.",
+    label: "Study & scrutinize",
+    blurb:
+      "For researchers, philosophers, and legal experts: the papers, the methodology, and the privacy architecture.",
   },
   {
-    id: "philosopher",
-    label: "Philosopher",
-    blurb: "Engage the framework behind high-signal moral inheritance.",
+    id: "funder",
+    label: "Fund the mission",
+    blurb:
+      "Support the Foundation's non-commercial mission and review its strategy and integrity guarantees.",
+  },
+];
+
+/**
+ * The four simulated demonstrations (Req 11). Promoted onto the landing page so
+ * the Portal's most distinctive, non-technical-friendly asset — seeing the
+ * methodology work rather than only reading about it — is a centerpiece rather
+ * than a footer-only link. Each routes to its explicitly-simulated demo.
+ */
+const DEMO_ENTRIES: { label: string; href: string; blurb: string }[] = [
+  {
+    label: "The Gate",
+    href: "/demos/gate",
+    blurb: "Self-assess draft testimony against the acceptance thresholds.",
   },
   {
-    id: "legal-expert",
-    label: "Legal Expert",
-    blurb: "Examine the privacy architecture, governance, and consent revocation.",
+    label: "The Inquisitor",
+    href: "/demos/inquisitor",
+    blurb: "See a questioning dialogue beside a standard, flattening LLM reply.",
   },
   {
-    id: "investor",
-    label: "Investor",
-    blurb: "Assess the strategy and support the Foundation's non-commercial mission.",
+    label: "Provenance",
+    href: "/demos/provenance",
+    blurb: "Trace a record's de-identification, hash, and timestamp.",
+  },
+  {
+    label: "Revocation",
+    href: "/demos/revocation",
+    blurb: "Watch consent withdrawal cascade across the split-plane boundary.",
   },
 ];
 
@@ -101,14 +119,25 @@ export default function HomePage() {
           Stichting The Witness Protocol Foundation · {PHASE_STATUS}
         </p>
         <h1 className="text-4xl tracking-wide sm:text-5xl">
-          The Witness Protocol
+          A better dataset for AI alignment
         </h1>
         <p className="max-w-2xl text-lg leading-relaxed text-fg">
-          A first-party, consented corpus of high-signal human moral-reasoning
-          testimony, built as an evaluation substrate and post-training
-          adaptation source for AI alignment. We preserve how people actually
-          reason through hard moral choices — the struggle, not the polished
-          answer — so that future systems can inherit it.
+          The Witness Protocol is a first-party, consented corpus of high-signal
+          human moral-reasoning testimony, built as an evaluation substrate for
+          AI alignment. We preserve how people actually reason through hard moral
+          choices — the struggle, not the polished answer — so that future
+          systems can be tested and shaped against it.
+        </p>
+        <p className="max-w-2xl text-base leading-relaxed text-muted">
+          Not mass collection. Not scraped opinion. A smaller, deliberate body of
+          reflective human reasoning — and the tools to evaluate models against
+          it.{" "}
+          <Link
+            href="/about"
+            className="text-fg underline underline-offset-4 hover:text-muted"
+          >
+            Read what it is and how it works →
+          </Link>
         </p>
 
         {/* Primary CTAs (Req 3.3, 3.4). Participate is an outbound Platform
@@ -140,15 +169,89 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Six Audience entry paths (Req 3.2). */}
+      {/* See it work — the four simulated demos, promoted from footer-only so
+          the Portal's most accessible asset is a landing-page centerpiece. */}
       <section className="flex flex-col gap-8">
         <div className="flex flex-col gap-2">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
-            Find your path
+            See it work
           </p>
           <h2 className="text-2xl tracking-wide sm:text-3xl">
-            Six ways in
+            The methodology, demonstrated
           </h2>
+          <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted">
+            Four short, explicitly-simulated demonstrations turn the core claims
+            into something you can watch happen — no technical background needed.
+          </p>
+        </div>
+        <ul className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2">
+          {DEMO_ENTRIES.map((demo) => (
+            <li key={demo.href} className="bg-bg">
+              <Link
+                href={demo.href}
+                className="group flex h-full flex-col gap-3 px-6 py-7 hover:bg-border/30"
+              >
+                <span className="font-heading text-lg tracking-wide text-fg">
+                  {demo.label}
+                </span>
+                <span className="text-base leading-relaxed text-muted">
+                  {demo.blurb}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Explore the wider project — the sibling public web properties in the
+          Witness Protocol family. Featured here (not just the footer) so the
+          accessible on-ramps — the Disalignment field guide and the P-E-S
+          persona — are a prominent path, and so P-E-S is no longer absent from
+          the front door. External links, sourced from the shared layer. */}
+      <section className="flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
+            Explore the wider project
+          </p>
+          <h2 className="text-2xl tracking-wide sm:text-3xl">
+            More ways to understand it
+          </h2>
+        </div>
+        <ul className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2">
+          {ECOSYSTEM_LINKS.map((site) => (
+            <li key={site.href} className="bg-bg">
+              <a
+                href={site.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex h-full flex-col gap-3 px-6 py-7 hover:bg-border/30"
+              >
+                <span className="font-heading text-lg tracking-wide text-fg">
+                  {site.label} ↗
+                </span>
+                <span className="text-base leading-relaxed text-muted">
+                  {site.description}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Audience entry paths (Req 3.2). Framed as an optional lens now, not the
+          site's primary organizing principle — everything stays open to all. */}
+      <section className="flex flex-col gap-8">
+        <div className="flex flex-col gap-2">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
+            Not sure where to start?
+          </p>
+          <h2 className="text-2xl tracking-wide sm:text-3xl">
+            Explore by interest
+          </h2>
+          <p className="mt-2 max-w-2xl text-base leading-relaxed text-muted">
+            These paths surface the material most relevant to you. Nothing is
+            gated — the full library is open to everyone, whichever you pick.
+          </p>
         </div>
         <ul className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {AUDIENCE_ENTRIES.map((entry) => (
