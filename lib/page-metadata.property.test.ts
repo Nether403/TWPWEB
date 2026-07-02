@@ -70,13 +70,13 @@ const STATIC_PAGES: readonly PageMeta[] = [
     path: "/legal",
     title: "Legal — The Witness Protocol",
     description:
-      "Legal notice for Stichting The Witness Protocol Foundation: the entity behind the project, the non-commercial nature of contributions, use of site content, and disclaimers.",
+      "Legal notice for The Witness Protocol Foundation initiative: the entity status, non-commercial nature of contributions, use of site content, and disclaimers.",
   },
   {
     path: "/privacy",
     title: "Privacy — The Witness Protocol",
     description:
-      "How the Witness Protocol Portal handles data (almost none), and how the wider Protocol protects witness testimony: separation of identity from testimony, de-identification, tamper-evidence, and cascading consent revocation.",
+      "How the Witness Protocol Portal handles data (almost none), and how the wider Protocol protects witness testimony: separation of identity from testimony, de-identification, tamper-evidence, and consent revocation.",
   },
   {
     path: "/media/infographics",
@@ -135,7 +135,7 @@ const STATIC_PAGES: readonly PageMeta[] = [
     path: "/contact",
     title: "Contact — The Witness Protocol",
     description:
-      "Send a general message to Stichting The Witness Protocol Foundation. For testimony, the reviewer packet, participation, or consent, the Portal hands you off to the live Platform.",
+      "Send a general message to The Witness Protocol Foundation initiative. For testimony, the reviewer packet, participation, or consent, the Portal hands you off to the live Platform.",
   },
 ];
 

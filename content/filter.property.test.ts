@@ -38,7 +38,7 @@ const audienceSelectorArb = fc.oneof(
 
 // A minimal ContentItem: only the fields filterContent inspects (type,
 // audienceTags) need to vary; the rest are filled with valid placeholders. The
-// audienceTags set is a (possibly empty) subset of the six audiences.
+// audienceTags set is a (possibly empty) subset of the three canonical audiences.
 const itemArb: fc.Arbitrary<ContentItem> = fc.record({
   type: categoryArb,
   audienceTags: fc.subarray([...AUDIENCES]),

@@ -39,7 +39,7 @@ Property-based tests use **fast-check** (minimum 100 iterations each), and every
   - [x] 2.5 Implement `loadAllContent` reading `Blog posts`, `Articles and papers`, `reports`
     - Parse markdown with `gray-matter` + remark/rehype, emit `ContentItem[]` with unique slugs and rendered `bodyHtml`
     - Read each item's `Audience_Tags` from front-matter; assign a default tag set when absent so every item stays discoverable through at least one audience journey
-    - After loading, emit a build-log warning (via `audienceWarnings`) if any of the six audiences has zero tagged items
+    - After loading, emit a build-log warning (via `audienceWarnings`) if any of the three canonical audiences has zero tagged items
     - Exclude unparseable files, recording `{ file, reason }` in the returned `skipped` list and build log; do not fail the build
     - Catalogue PDFs as `format: "pdf"` items with `assetPath`
     - _Requirements: 5.1, 6.1, 7.1, 5.5, 21.1, 21.2, 21.3, 21.4, 21.5, 21.6_
@@ -103,7 +103,7 @@ Property-based tests use **fast-check** (minimum 100 iterations each), and every
     - **Validates: Requirements 5.1, 5.2, 6.1, 7.1**
 
   - [x] 5.3 Implement `Content_Index` at `/library` with `filterContent`
-    - Render every item with title, summary, and type label; client-side filter by type (blog/article/paper/report/all) **and** by audience (six audiences/all)
+    - Render every item with title, summary, and type label; client-side filter by type (blog/article/paper/report/all) **and** by audience (three audiences/all)
     - _Requirements: 5.3, 6.3, 7.2, 21.7_
 
   - [x] 5.4 Write property test for content index completeness
@@ -146,13 +146,13 @@ Property-based tests use **fast-check** (minimum 100 iterations each), and every
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
   - [x] 7.2 Implement `Audience_Router` config and routes `/audience/[audience]`
-    - Static config map for the six audiences with intro, CTAs (≥1 each; real-action CTAs link out to the Platform via the shared link-out layer), and demo links per Req 4.4–4.7
+    - Static config map for the three canonical audiences with intro, CTAs (≥1 each; real-action CTAs link out to the Platform via the shared link-out layer), and demo links per Req 4.4–4.7
     - Surface the content for each audience via `contentForAudience` by `Audience_Tag` membership
     - Entry paths filter and surface content but do not gate it: the open `/library` index lets any Visitor reach Content_Items for any Audience regardless of the entry path selected
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8_
 
   - [x] 7.3 Write property test for audience journey invariant and tag-based surfacing
-    - **Property 9: Audience journey invariant and tag-based surfacing** — each of the six audiences resolves a distinct config with ≥1 CTA, and `contentForAudience(items, audience)` returns exactly the items whose `audienceTags` include that audience
+    - **Property 9: Audience journey invariant and tag-based surfacing** — each canonical audience resolves a distinct config with ≥1 CTA, and `contentForAudience(items, audience)` returns exactly the items whose `audienceTags` include that audience
     - **Validates: Requirements 4.1, 4.2, 4.3, 21.5**
 
   - [x] 7.4 Write unit tests for landing and audience-specific links

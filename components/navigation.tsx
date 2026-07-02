@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ThemeController } from "./theme-controller";
 import { MobileMenu } from "./mobile-menu";
 import { ECOSYSTEM_LINKS, SOCIAL_LINKS } from "@/lib/external-links";
@@ -77,9 +78,17 @@ export function SiteHeader() {
         {/* Wordmark links to Home (Req 2.1). */}
         <Link
           href="/"
-          className="font-heading text-base uppercase tracking-[0.25em] text-fg hover:text-muted sm:text-lg"
+          className="group flex items-center gap-3 font-heading text-base uppercase tracking-[0.25em] text-fg hover:text-muted sm:text-lg"
         >
-          The Witness Protocol
+          <Image
+            src="/twp-logo-white.png"
+            alt=""
+            width={28}
+            height={28}
+            priority
+            className="twp-logo-mark opacity-80 group-hover:opacity-100"
+          />
+          <span>The Witness Protocol</span>
         </Link>
 
         {/* Desktop primary nav: shown from 769px up so it never overlaps the
@@ -154,9 +163,18 @@ export function SiteFooter() {
         <div className="flex flex-col gap-4 border-t border-border pt-8 text-muted sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1">
             {/* Foundation identity + phase status (Req 2.4). */}
-            <span className="font-heading text-sm uppercase tracking-[0.2em] text-fg">
-              Stichting The Witness Protocol Foundation
-            </span>
+            <Link href="/" className="group flex items-center gap-3">
+              <Image
+                src="/twp-logo-white.png"
+                alt=""
+                width={24}
+                height={24}
+                className="twp-logo-mark opacity-60 group-hover:opacity-100"
+              />
+              <span className="font-heading text-sm uppercase tracking-[0.2em] text-fg">
+                The Witness Protocol Foundation initiative
+              </span>
+            </Link>
             <span className="font-mono text-xs uppercase tracking-[0.2em]">
               {PHASE_STATUS}
             </span>

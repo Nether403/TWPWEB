@@ -123,6 +123,15 @@
     outline: none;
   }
 
+  /* Platform logo asset is white; invert it in the light paper theme. */
+  .twp-logo-mark {
+    filter: none;
+  }
+
+  [data-theme="paper"] .twp-logo-mark {
+    filter: invert(1);
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

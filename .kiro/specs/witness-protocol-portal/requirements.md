@@ -5,7 +5,7 @@
 > effectively identical; Potential Witness and Invited Professional differed by
 > one CTA; Legal Expert and Investor mostly routed to the library). They are now
 > collapsed into the three destinations the site actually serves. **This note
-> supersedes every "six audiences" enumeration below** (incl. the Glossary,
+> supersedes the historic six-persona model** (incl. the Glossary,
 > Req 3.2, Req 4.1, and Req 21.6). The canonical set and the mapping:
 >
 > | Canonical audience (`id`) | Absorbs the former personas | Journey |
@@ -23,9 +23,9 @@
 
 This document specifies the requirements for the **Witness Protocol Portal**: the public information hub and main landing experience for the Witness Protocol, built in the `TWPWEB` workspace. The Portal transforms the existing collection of draft React components, documentation, blog posts, articles, papers, reports, infographics, slides, and videos into a single, professional, publicly accessible website.
 
-The Portal is **front-of-house**: an informational, public-facing surface that tells the story and mission, routes six audiences to relevant content, presents the full content library and media galleries, presents funding information, and hosts four explicitly-simulated interactive demonstrations. The **Platform** (the existing, live `TWP-platform` control plane) is **back-of-house**: the real instrument that already implements the Gate intake, the reviewer/MHS packet, participation and consent records, authentication, the audit log, and the real Inquisitor dialogue engine. The Portal does not rebuild any of those real actions; it links out to the Platform for all of them. The new value the Portal adds — the content library, media galleries, audience journeys, funding information, and simulated demonstrations — does not exist on the Platform today.
+The Portal is **front-of-house**: an informational, public-facing surface that tells the story and mission, routes three audience groups to relevant content, presents the full content library and media galleries, presents funding information, and hosts four explicitly-simulated interactive demonstrations. The **Platform** (the existing, live `TWP-platform` control plane) is **back-of-house**: the real instrument that already implements the Gate intake, the reviewer/MHS packet, participation and consent records, authentication, the audit log, and the real Inquisitor dialogue engine. The Portal does not rebuild any of those real actions; it links out to the Platform for all of them. The new value the Portal adds — the content library, media galleries, audience journeys, funding information, and simulated demonstrations — does not exist on the Platform today.
 
-The Portal serves six distinct audiences — potential participants (witnesses), invited professionals, AI researchers and scholars, philosophers, legal experts, and funders — and provides each with a tailored journey to relevant content and a clear call to action (read research, explore the demonstrations, support the Foundation, or hand off to the Platform to participate).
+The Portal serves three audience groups — contributors, researchers/scholars, and funders — and provides each with a tailored journey to relevant content and a clear call to action (read research, explore the demonstrations, support the initiative, or hand off to the Platform to participate).
 
 The Portal preserves the austere "gravity over gamification" design language mandated by the project's Product Requirements Document (stark minimalism, EB Garamond and Cinzel typography, near-black "basalt" palette, no accent colors, slow transitions) while delivering a visually striking, cinematic reading and navigation experience. The Portal integrates the project's existing assets: it renders the markdown blog posts, articles, papers, and reports as native site pages, and it embeds or links the PDFs, PNG infographics, PPTX slide decks, and MP4 videos. It carries forward the interactive demonstrations prototyped in the draft files (the Inquisitor transcript comparator, the cryptographic provenance explorer, the consent revocation simulator, and the Gate self-assessment simulator).
 
@@ -35,21 +35,21 @@ The Portal preserves the austere "gravity over gamification" design language man
 - **Content rendering:** Markdown files are rendered as native HTML pages; PDFs, slides, and videos are embedded or linked.
 - **Boundary with the Platform:** The Portal links out to the Platform's existing surfaces for the real Gate intake (`/gate`), the reviewer/MHS packet and passwordless intake (`/packet`, `/api/intake`), participation and consent, and the real Inquisitor (`/api/inquisitor`). The Portal does not reimplement authentication, consent records, testimony intake, or an audit log.
 - **Cash funding:** Bank transfer / wire details displayed as donation/grant information, plus a funder/invoice request form.
-- **Token funding:** Static cryptocurrency wallet addresses with QR codes, information only (no wallet-connect, no on-chain transactions, no custody).
+- **Token funding:** Information-only cryptocurrency contribution guidance. Wallet addresses, QR codes, and copy controls remain disabled until verified contribution addresses are approved and published (no wallet-connect, no on-chain transactions through the Portal, no custody).
 - **Backend for the Portal's own forms:** The two Portal-owned forms (funder/invoice and general contact) reuse the Platform's existing Supabase (data persistence) and Resend (transactional email) stack and conventions, rather than standing up a separate parallel data plane.
 
 ## Glossary
 
 - **Portal**: The complete Witness Protocol Portal website, the informational, public-facing front-of-house system being specified by this document.
-- **Platform**: The existing, live `TWP-platform` control plane — a separate Next.js + Supabase + Drizzle application (Phase 5 Alpha) that implements the real Gate intake, the reviewer/MHS packet and passwordless intake, participation and consent records, authentication, the audit log, and the real Inquisitor dialogue engine. The Portal links out to the Platform for all real actions and does not reimplement it.
+- **Platform**: The existing, live `TWP-platform` control plane — a separate Next.js + Supabase + Drizzle application (Phase 5 Beta v0.9 live) that implements the real Gate intake, the reviewer/MHS packet and passwordless intake, participation and consent records, authentication, the audit log, and the real Inquisitor dialogue engine. The Portal links out to the Platform for all real actions and does not reimplement it.
 - **Visitor**: Any person browsing the Portal who has not authenticated.
 - **Audience_Router**: The Portal subsystem that presents audience-specific entry paths and routes a Visitor to content and calls to action relevant to a selected audience.
-- **Audience**: One of the six defined visitor types: Potential_Witness, Invited_Professional, Researcher, Philosopher, Legal_Expert, or Investor.
+- **Audience**: One of the three canonical visitor groups: Contributor, Researcher, or Funder. Older persona names remain accepted as content aliases.
 - **Navigation_System**: The Portal subsystem providing the global header, menu, footer, and in-page navigation.
 - **Content_Renderer**: The Portal subsystem that converts source markdown files into styled HTML pages at build time.
 - **Content_Index**: The Portal subsystem that lists, filters, and sorts published content items (blog posts, articles, papers, reports).
 - **Content_Item**: A single published piece of content (a blog post, article, paper, or report) with metadata (title, type, author, date, summary, and audience tags).
-- **Audience_Tag**: A metadata value, declared in a Content_Item's front-matter, that associates the item with one of the six Audiences.
+- **Audience_Tag**: A metadata value, declared in a Content_Item's front-matter, that associates the item with one of the three canonical Audiences.
 - **Media_Viewer**: The Portal subsystem that displays PDFs, infographics, slide decks, and videos.
 - **Inquisitor_Comparator**: The interactive component that shows a side-by-side comparison of a standard LLM response versus a G_5.2 Inquisitor response.
 - **Provenance_Explorer**: The interactive component that displays a simulated cryptographic provenance trace for a mock Witness record.
@@ -89,7 +89,7 @@ The Portal preserves the austere "gravity over gamification" design language man
 1. THE Navigation_System SHALL present a persistent global header containing the Witness Protocol wordmark and primary navigation links on every page.
 2. THE Navigation_System SHALL provide primary navigation entries for Home, About/Methodology, Research & Library, Participate, Fund, and Contact.
 3. WHEN a Visitor selects a primary navigation entry, THE Navigation_System SHALL load the corresponding section within 1 second on a broadband connection.
-4. THE Navigation_System SHALL present a footer on every page containing the Foundation identity ("Stichting The Witness Protocol Foundation"), the current project phase status, and links to legal and privacy information.
+4. THE Navigation_System SHALL present a footer on every page containing the Foundation initiative identity, the current project phase status, and links to legal and privacy information.
 5. WHEN a Visitor views any page on a viewport width of 768 pixels or less, THE Navigation_System SHALL present a collapsible menu control that exposes all primary navigation entries.
 6. WHEN a Visitor requests a URL that does not resolve to a published page, THE Portal SHALL display a styled not-found page that includes navigation back to the Home section.
 

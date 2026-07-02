@@ -19,7 +19,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy — The Witness Protocol",
   description:
-    "How the Witness Protocol Portal handles data (almost none), and how the wider Protocol protects witness testimony: separation of identity from testimony, de-identification, tamper-evidence, and cascading consent revocation.",
+    "How the Witness Protocol Portal handles data (almost none), and how the wider Protocol protects witness testimony: separation of identity from testimony, de-identification, tamper-evidence, and consent revocation.",
 };
 
 export default function PrivacyPage() {
@@ -35,8 +35,9 @@ export default function PrivacyPage() {
         <p className="max-w-2xl text-lg leading-relaxed text-fg">
           Absolute honesty is only possible in a space where identity is
           protected. Privacy here is an architectural constraint, not just a
-          legal promise. This notice explains what this website collects and how
-          the wider Protocol protects testimony.
+          legal promise. This notice explains what this website collects, what
+          the live Platform handles, and which stronger provenance mechanisms are
+          still planned infrastructure.
         </p>
       </header>
 
@@ -109,10 +110,10 @@ export default function PrivacyPage() {
               Two-pass de-identification
             </span>
             <span className="text-base leading-relaxed text-muted">
-              A local pass strips hard identifiers (emails, numbers, dates)
-              before any external model sees the text; a second pass replaces
-              names, institutions, and places with typed placeholders — keeping
-              the reasoning intact while removing the trail back to you.
+              The Platform strips hard-format identifiers before Gate model
+              calls. Candidate Isolation is then used for PII classification and
+              de-identification: only isolated candidate tokens are sent to the
+              classifier for that step, never the full testimony context.
             </span>
           </li>
           <li className="flex flex-col gap-1 bg-bg px-6 py-5">
@@ -120,9 +121,10 @@ export default function PrivacyPage() {
               Tamper-evidence
             </span>
             <span className="text-base leading-relaxed text-muted">
-              Finalized entries are content-hashed and cryptographically
-              timestamped, so the version researchers see is exactly the version
-              you consented to — nothing more, nothing less.
+              Live records use content hashes and disclosure-ledger entries to
+              make sharing auditable. RFC-3161 timestamping and IPFS-style
+              content-addressed archival are planned provenance layers; the
+              portal demo shows simulated values until those layers are live.
             </span>
           </li>
           <li className="flex flex-col gap-1 bg-bg px-6 py-5">
@@ -130,9 +132,10 @@ export default function PrivacyPage() {
               Revocation that cascades
             </span>
             <span className="text-base leading-relaxed text-muted">
-              Consent can be withdrawn. Because testimony is linked to an
-              identity in the vault, revocation purges it across the pipeline —
-              a system behaviour, not a manual favour.
+              Consent can be withdrawn. Revocation blocks future use and export,
+              marks disclosure-ledger exposures as revoked, and triggers eligible
+              internal or partner data-removal paths. Already public or cited
+              copies cannot be globally recalled, but future distribution stops.
             </span>
           </li>
         </ul>
@@ -164,8 +167,8 @@ export default function PrivacyPage() {
 
       <p className="border-t border-border pt-8 font-mono text-xs leading-relaxed text-muted">
         This is a plain-language summary, not the complete legal policy. For the
-        formal privacy policy or a data request, contact Stichting The Witness
-        Protocol Foundation via the{" "}
+        formal privacy policy or a data request, contact The Witness Protocol
+        Foundation initiative via the{" "}
         <Link
           href="/contact"
           className="text-fg underline underline-offset-4 hover:text-muted"

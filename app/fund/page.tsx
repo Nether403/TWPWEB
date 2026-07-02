@@ -24,13 +24,11 @@ import {
  * (task 11.1): bank/wire donation/grant details, the donation-only framing, the
  * funder/invoice request form (delegating to the Form_Handler), and the
  * Curatorial Neutrality Statement adjacent to the cash options (Req 15.1–15.4).
- * The token funding section (task 11.2): per-token donation cards with
- * build-time QR codes and copy-to-clipboard, the donation-only framing, the
- * information-only crypto disclaimer, and the Curatorial Neutrality Statement
- * adjacent to the token options (Req 16.6). The build-time compliance guard
- * (Req 16.7) runs in `buildTokenFundingView`: the Curatorial Neutrality
- * Statement copy is fed in as adjacent copy so it is part of the scanned token
- * funding view.
+ * The token funding section (task 11.2): donation-only framing, a verified-
+ * addresses-pending notice, the information-only crypto disclaimer, and the
+ * Curatorial Neutrality Statement adjacent to the token options (Req 16.6).
+ * `buildTokenFundingView` fails closed until addresses are verified, and also
+ * scans adjacent copy for prohibited investment framing (Req 16.7).
  */
 
 export const metadata: Metadata = {
@@ -107,8 +105,9 @@ export default async function FundPage() {
         <CuratorialNeutralityStatement />
       </section>
 
-      {/* Token donations (task 11.2). The neutrality statement renders adjacent
-          to the token options (Req 16.6). */}
+      {/* Token donations (task 11.2). Transfer controls are disabled until
+          verified addresses are approved; the neutrality statement remains
+          adjacent to the informational token section (Req 16.6). */}
       <div className="flex flex-col gap-8">
         <TokenFunding
           cards={tokenView.cards}

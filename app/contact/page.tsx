@@ -16,7 +16,7 @@ import { ContactForm } from "@/components/contact-form";
 export const metadata: Metadata = {
   title: "Contact — The Witness Protocol",
   description:
-    "Send a general message to Stichting The Witness Protocol Foundation. For testimony, the reviewer packet, participation, or consent, the Portal hands you off to the live Platform.",
+    "Send a general message to The Witness Protocol Foundation initiative. For testimony, the reviewer packet, participation, or consent, the Portal hands you off to the live Platform.",
 };
 
 export default function ContactPage() {

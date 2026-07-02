@@ -1,9 +1,10 @@
 # The Witness Protocol Portal (`witness-protocol-portal`)
 
 The public **information hub** and main landing experience for the Witness
-Protocol. The Portal is **front-of-house**: it tells the mission, routes six
-audiences to relevant content, presents the content library and media galleries,
-shows funding information, and hosts explicitly-simulated interactive demos.
+Protocol. The Portal is **front-of-house**: it tells the mission, routes three
+audience groups to relevant content, presents the content library and media
+galleries, shows funding information, and hosts explicitly-simulated interactive
+demos.
 
 It replaces the placeholder site previously hosted at TWPF.online.
 
@@ -52,13 +53,13 @@ no accent colors, slow transitions.
 ```text
 TWPWEB/
 ├─ app/
-│  ├─ page.tsx            # landing: mission, six audiences, recent library items
+│  ├─ page.tsx            # landing: mission, three journeys, recent library items
 │  ├─ audience/[audience] # per-audience journeys + CTAs
 │  ├─ library/            # markdown articles/papers/reports + /pdf previews
 │  ├─ media/              # infographics, slides, videos galleries
 │  ├─ demos/              # gate · inquisitor · provenance · revocation (SIMULATED)
 │  ├─ fund/ · participate/ · contact/
-│  └─ api/forms/          # contact/intake form handler (Resend)
+│  └─ api/forms/          # contact/invoice form handler (Resend)
 ├─ content/               # content loader + manifest
 ├─ lib/                   # platform-links (link-out layer) and helpers
 ├─ components/

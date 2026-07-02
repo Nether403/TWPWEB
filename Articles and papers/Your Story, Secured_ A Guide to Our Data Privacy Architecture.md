@@ -1,44 +1,58 @@
 ---
 Audience_Tags: [contributor, researcher]
 ---
-### Your Story, Secured: A Guide to Our Data Privacy Architecture
 
-##### 1\. The Core Promise: Why Privacy is the Foundation
+## Your Story, Secured: A Guide to Our Data Privacy Architecture
 
-The primary mission of this platform is to act as a "lifeboat" for human wisdom in an era of rapid AI expansion. To understand why this requires such rigorous privacy, we must look at the  **Flawed Parent Thesis** : current AI systems are trained on "uncurated digital exhaust"—the messy, contradictory, and often toxic data scraped indiscriminately from the open internet. To create a corrective alignment, we need high-signal truth.Absolute honesty from our contributors is only possible in a space where identity is mathematically and architecturally protected. Our goal is to preserve the  *ethical reasoning*  and  *moral depth*  of your testimony, not the identifiers of the storyteller. By anchoring our data to a tamper-evident ledger using SHA-256 content hashing and RFC-3161 timestamps, we ensure the integrity of the wisdom while sealing the identity of the witness.**Core Principle**   *"The intelligence we birth must inherit more than our chaos."*This commitment to safety creates a structural firewall designed to separate your identity from your insights, ensuring that the "who" never compromises the "what."
+The Witness Protocol asks for unusually honest moral reasoning. That only makes sense if the architecture treats privacy as a technical constraint, not a decorative promise.
 
-##### 2\. The Identity Firewall: Separating the "Who" from the "What"
+This guide distinguishes three things:
 
-To prevent identity bleed, our architecture utilizes a "two-room" system. This deterministic separation ensures that personal details required for account management never interact with the data used for research.**The Two-Room System**| **The Identity Vault** | **The Research Corpus** || \------ | \------ || **Contents:**  Legal names, email addresses, and authentication records. | **Contents:**  Moral dilemmas, transcripts of ethical reasoning, and CAP/REL/FELT annotations. || **Usage:**  Strictly restricted to  **System Administrators**  for account management and consent revocation. | **Usage:**  The primary dataset for researchers studying human values and moral logic. || **Privacy Rule:**  This data is never distributed, never used for training, and is stored in an access-controlled vault. | **Privacy Rule:**  Data only enters this room after being "scrubbed" and replaced with typed placeholders. |  
-The most critical part of this firewall is the rigorous, multi-pass process used to move information from the first room to the second.
+- what the public Portal collects;
+- what the live Platform/control plane handles;
+- which stronger provenance mechanisms are planned but not yet live.
 
-##### 3\. The Two-Pass De-identification Process: Scrubbing the Script
+## The Portal Collects Almost Nothing
 
-Before any testimony enters the Research Corpus, it undergoes a tiered de-identification process. This is not a simple "search and replace"; it is a sophisticated filtering pipeline:
+This website is a public information hub. It does not host testimony intake, consent records, authentication, the real Gate, or the real Inquisitor. Those actions live on the separate Platform.
 
-1. **Pass 1: The Local Regex Strip:**  This is a fast local filter that catches obvious patterns. It removes phone numbers, email addresses, Social Security Numbers (SSNs), IP addresses, URLs, and  **specific dates**  before any external AI sees the text.  
-2. **Pass 2: The Smart Classifier:**  Using Named Entity Recognition (NER), the system scans the text for qualitative identifiers like names, specific institutions, or locations.By replacing these specifics with typed placeholders—such as REDACTED\_NAME or REDACTED\_LOCATION—the system preserves the logical structure and moral "signal" of your sentence while permanently destroying the identifier. This transformation allows the ethical reasoning to remain intact for research without leaving a trail back to the witness.
+The Portal owns only two forms: general contact and funder/invoice requests. Those submissions are stored in an isolated `portal_submissions` table and are not added to witness, consent, audit, or research data.
 
-##### 4\. Candidate Isolation: The "Envelope" Strategy
+## The Two-Room Model
 
-To ensure your story remains private even during AI analysis, we utilize  **Privacy through Isolation** . Standard systems often send entire documents to an external AI to find secrets, which risks exposure. We use a more secure "envelope" strategy.
+The Protocol separates the **who** from the **what**.
 
-* **Standard Method:**  The entire story is sent to an external AI to find identifiers. (Risk: Exposure of the full narrative).  
-* **Candidate Isolation:**  Our system identifies a "candidate" (e.g., "Paris" or "John"). It places  *only that single word*  in a metaphorical envelope and sends it to a  **frontier model**  to ask: "Is this a location or a name?" (Benefit: The context of your story never leaves our server).This architecture ensures that the "Smart Classifier" can do its job without ever seeing the sensitive narrative surrounding the candidates it evaluates.
+| Space | Contains | Purpose |
+|---|---|---|
+| Identity/control plane | Names, contact details, authentication state, consent records, audit records | Account, consent, review, and legal/control-plane obligations |
+| Governed testimony/runtime plane | De-identified moral reasoning, witness dialogue state, consent-gated artifacts | Research and evaluation substrate |
 
-##### 5\. The Human Guardrail: Tier 3 Curation
+This separation is not a claim that no raw data ever exists. Gate submissions are handled inside the control plane. The claim is narrower and more important: sensitive identity/control data must not be duplicated into research-facing runtime artifacts, and runtime testimony must not bleed into unrelated persona or P-E-S state.
 
-While automation is fast, the final layer of safety is the  **Human Curation Council (HCC)** . This body provides a "blind, dual-rater review" to ensure the highest standards of data safety and research quality.The HCC performs three vital duties:
+## PII Handling
 
-* **Manual Redaction:**  Reviewers perform a final pass to scrub any nuanced identifiers the automated passes might have missed.  
-* **Semantic Tagging:**  They apply the  **CAP/REL/FELT**  framework, tagging the testimony for Capabilities, Relational ethics, and Embodied experience to make it machine-usable for alignment.  
-* **Inter-Rater Reliability:**  Every story is reviewed by at least two human experts who must reach a high level of consensus (measured by Cohen’s Kappa). This ensures the de-identification is successful and the testimony meets the "Specificity Floor."
+The current implementation uses staged de-identification:
 
-##### 6\. Summary: The Anatomy of a Safe Story
+1. Hard-format identifiers such as emails, phone numbers, URLs, IDs, IP addresses, and specific dates are stripped by local regex before Gate model calls.
+2. Candidate Isolation is used for PII classification and de-identification: candidate tokens are extracted and sent to the classifier without the full testimony context for that PII-classification step.
+3. Classified candidates are replaced locally with typed placeholders such as `[REDACTED_NAME]`, `[REDACTED_INSTITUTION]`, or `[REDACTED_LOCATION]`.
 
-Through these layers, a sensitive personal account is transformed into a valuable, de-identified research artifact.**Transformation Example**  
-Original: "I worked as a lead surgeon at St. Jude’s Hospital in Memphis on June 12th."
+This means the accurate privacy claim is not “no text ever reaches an LLM.” The accurate claim is that the system strips hard identifiers before Gate model calls, and that the PII-classification step sends only isolated candidate tokens rather than full testimony context.
 
-Scrubbed: "I worked as a \[REDACTED\_ROLE\] at \[REDACTED\_INSTITUTION\] in \[REDACTED\_LOCATION\] during \[REDACTED\_DATE\]."
+## Provenance
 
-This structured architecture puts you in permanent control. Should you choose to change your mind, our  **Revocation Coordinator**  is designed to handle "cascading deletions." Because your identity is linked to a specific ID in the vault, the system can instantly purge your testimony across all research tiers. Finally, every finalized entry is sealed on a tamper-evident ledger, ensuring that the version researchers see is exactly the version you consented to provide—nothing more, and nothing less.  
+The live system uses content hashes and disclosure-ledger records to make sharing auditable. RFC-3161 timestamping and IPFS/content-addressed archival are planned provenance layers. Portal provenance demos use simulated timestamp and CID values until those layers are implemented.
+
+## Revocation
+
+Consent can be withdrawn. Revocation blocks future use and export, marks disclosure-ledger exposures as revoked, and triggers eligible internal or partner data-removal paths where technically and contractually possible.
+
+There is one honest limitation: if a public subset has already been downloaded, cited, or redistributed under its public terms, no organization can globally recall every copy from the world. In that case the Foundation records the revocation, stops future distribution, and documents the limit clearly.
+
+## Current Entity Status
+
+This work is stewarded by The Witness Protocol Foundation initiative, with Dutch Stichting registration in progress. Until registration is finalized, public claims should not imply completed Stichting, ANBI, fiscal-sponsor, or tax status.
+
+## The Principle
+
+The Protocol exists because future intelligence should inherit more than our digital exhaust. But preserving high-signal testimony requires restraint: precise consent, careful de-identification, auditable disclosure, and honest limits around what technology can and cannot retract.

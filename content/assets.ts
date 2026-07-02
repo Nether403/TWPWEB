@@ -108,7 +108,9 @@ function copyOne(
   }
 
   fs.mkdirSync(path.dirname(destAbs), { recursive: true });
-  fs.copyFileSync(srcAbs, destAbs);
+  if (path.resolve(srcAbs) !== path.resolve(destAbs)) {
+    fs.copyFileSync(srcAbs, destAbs);
+  }
   void servedPath; // served path is recorded by the caller
   return true;
 }
@@ -121,7 +123,9 @@ function copyOne(
  *   item already carries the `assetPath` (`/assets/{category}/file.pdf`) the
  *   served file must live at, so we copy `sourcePath` → `public + assetPath`.
  * - Infographics / videos / slides are scanned from their source folders, copied
- *   to `/assets/{category}/file`, and catalogued as `MediaAsset`s.
+ *   to `/assets/{category}/file`, and catalogued as `MediaAsset`s. If a source
+ *   folder is missing but generated public assets already exist, those are
+ *   catalogued as a fallback so checked-in public media still appears.
  *
  * Pure with respect to the file system inputs: the same source bytes yield the
  * same manifest. Missing folders are treated as empty (warning, not error).
@@ -156,12 +160,26 @@ export function copyAssets(
 
   // 2. Infographics, videos, slides scanned from their source folders.
   for (const source of MEDIA_SOURCES) {
-    const folderAbs = path.join(rootDir, source.dir);
+    let folderAbs = path.join(rootDir, source.dir);
     if (!fs.existsSync(folderAbs)) {
-      console.warn(
-        `[assets] media folder missing, treating as empty: ${source.dir}`,
-      );
-      continue;
+      const publicFallbackAbs = path.join(publicDir, "assets", source.category);
+      const rootPublicFallbackAbs = path.join(rootDir, "public", "assets", source.category);
+      if (fs.existsSync(rootPublicFallbackAbs)) {
+        console.warn(
+          `[assets] media folder missing, using public/assets fallback: ${source.dir}`,
+        );
+        folderAbs = rootPublicFallbackAbs;
+      } else if (fs.existsSync(publicFallbackAbs)) {
+        console.warn(
+          `[assets] media folder missing, using public/assets fallback: ${source.dir}`,
+        );
+        folderAbs = publicFallbackAbs;
+      } else {
+        console.warn(
+          `[assets] media folder missing, treating as empty: ${source.dir}`,
+        );
+        continue;
+      }
     }
 
     const fileNames = fs
@@ -174,7 +192,7 @@ export function copyAssets(
       const servedPath = `/assets/${source.category}/${fileName}`;
       const srcAbs = path.join(folderAbs, fileName);
       const destAbs = path.join(publicDir, "assets", source.category, fileName);
-      const sourceLabel = path.join(source.dir, fileName);
+      const sourceLabel = path.relative(rootDir, srcAbs) || path.join(source.dir, fileName);
 
       if (!copyOne(srcAbs, destAbs, servedPath, sourceLabel, maxBytes, skipped))
         continue;

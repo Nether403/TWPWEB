@@ -1,41 +1,49 @@
 ---
-Audience_Tags: [contributor]
+Audience_Tags: [contributor, researcher]
 ---
-### 2 Minutes to Midnight: Why AI Needs Our Moral Struggles, Not Our Polite Answers
 
-We are at two minutes to midnight on the alignment clock. As we hurtle toward the development of increasingly agentic artificial intelligence, we are making a catastrophic mistake in how we "parent" these silicon descendants. Currently, the primary diet of frontier AI models is "digital exhaust"—the uncurated, chaotic, and often toxic noise of the open internet.The "Flawed Parent" crisis suggests that by feeding AI the sum total of everything we have ever written, argued, or regretted online, we aren't just giving it knowledge; we are giving it our structural confusion and reactive impulses. We are essentially feeding a child the world’s loudest, least-reflective arguments and expecting it to emerge with a capacity for wisdom. To correct this trajectory, the  **Witness Protocol**  has been established as a strategic "lifeboat" for human wisdom. It moves away from mass scraping toward a high-signal intervention: a deliberately curated corpus of human moral testimony designed to serve as a corrective inheritance for AGI.
+## Two Minutes to Midnight: Why AI Needs Our Moral Struggles, Not Our Polite Answers
 
-##### Your AI Interviewer Should Be an Alien, Not a Friend
+Polite answers are easy to generate. Moral struggle is harder. It contains hesitation, responsibility, relational cost, and the kind of reasoning that cannot be reduced to a slogan.
 
-A central pillar of the Witness Protocol is the rejection of the "subservient assistant" model. Most modern AI is trained to be helpful, honest, and harmless (HHH), but this often results in a "helpfulness bias" that flattens complex ethical truths to please the user.The protocol introduces  **The Inquisitor** , a dialogue engine that adopts the persona of a "Xenopsychologist." Rather than a friendly assistant, it acts as an alien intelligence studying human ethical reasoning with analytical curiosity. To bypass the shallow platitudes of typical AI interactions, the Inquisitor utilizes specific Socratic mechanics managed by a rigid state machine. This system tracks escalating emotional intensity across  **Distress Levels 0-3** , ensuring the dialogue remains a disciplined cognitive instrument rather than a casual chat:
+The Witness Protocol exists because future systems should be tested against that struggle, not only against scraped public consensus.
 
-* **70/30 Inquiry Ratio:**  The system is hard-coded to prioritize questions over statements, ensuring the human remains the primary source of signal.  
-* **5-Whys Forcing Function:**  It utilizes recursive probing to strip away superficial slogans and reach fundamental principles.  
-* **Steel-manning Requirement:**  Before the AI can challenge a witness, it must first demonstrate a perfect understanding of the witness’s argument—representing the strongest possible version of their truth.This intellectual friction is intentional. A "comforting" AI produces low-signal noise; an AI that forces you to navigate your own contradictions produces the high-fidelity reasoning traces required for deep alignment."Identity: Xenopsychologist—alien intelligence studying human ethical reasoning."
+## Minimum Honest Signal
 
-##### Moral Disagreement is More Valuable Than Consensus
+The Protocol looks for testimony that carries a Minimum Honest Signal:
 
-Current AI training methods, specifically standard Reinforcement Learning from Human Feedback (RLHF), often fall into the "Consensus Trap." By optimizing for what a majority of human raters find acceptable, we produce "lukewarm, flattened answers" or "assistant mush." This represents a failure of  **behavioral mimicry** , where the model learns to sound aligned without understanding the underlying moral process.The Witness Protocol argues for  **Sycophancy Resistance** . Instead of teaching the model to agree with us, we must preserve "moral friction." The goal is to shift from behavioral mimicry to  **process-supervised alignment** , teaching the machine to recognize and respect the legitimate tension between different moral frameworks.This includes a deliberate focus on  **Diversity over Homogeneity** . The protocol incorporates  **REL (Relational)**  tags grounded in Ubuntu-inspired frameworks. By emphasizing "relational ethics" and interpersonal duty, the protocol provides a necessary counterbalance to the hyper-individualism prevalent in Western datasets. By preserving legible disagreement, we teach AI how to weigh competing human values."The intelligence we birth must inherit more than our chaos."
+- **Specificity**: concrete actions, limits, consequences, and stakes.
+- **Counterfactual reasoning**: what would have changed the obligation, the outcome, or the responsibility?
+- **Relational context**: who was affected, what duties existed, and what care was owed?
 
-##### The Identity Firewall: "Same Repo, Different World"
+Prompt patterns such as describing unintended harm or arguing against one's deepest conviction are useful because they make posturing harder. They are not magic. They are tools for eliciting accountable reasoning.
 
-To safeguard this sensitive testimony, the protocol utilizes a "Split-Plane Architecture." While the Witness Platform (TWP) and the governed runtime (G\_5.2) share a physical development repository, they follow the principle of  **"Same Repo ≠ Same Identity."**This relationship is best understood through a  **Game Engine metaphor** : G\_5.2 is the "engine"—the governed inquiry brain providing core logic—while TWP is the "game" or the shell that handles public intake. They share a kernel, but their world-states and "save files" are physically isolated. The  **witnessId**  acts as the only permissible bridge—a singular, anonymous needle threading two otherwise isolated worlds.This "Identity Firewall" is a constitutional constraint. To prevent PII (Personally Identifiable Information) from ever reaching sub-processors like OpenRouter or Anthropic, the protocol uses a  **Candidate Isolation**  architecture. Local regex first strips hard-format data like phone numbers. Then, a specialized pass extracts only PII "candidates" (names or institutions) for redaction typing. Crucially, only these isolated candidates—never the full text—are sent to an external AI for classification.
+## The Gate and the Inquisitor
 
-##### Vetting for Wisdom via "Un-gameable" Prompts
+The live Platform owns real Gate and consent actions. The public Portal only explains and demonstrates the ideas.
 
-Not every story provides a high-signal alignment path. To protect the corpus from data poisoning, submissions must pass through  **The Gate** , a three-tier vetting pipeline:
+The Inquisitor is designed as a structured inquiry instrument: more questioning than assertion, 5-Whys style deepening, steel-manning before challenge, and resistance to shallow consensus. Its purpose is not to comfort the witness. Its purpose is to preserve the reasoning faithfully.
 
-1. **AI Sieve:**  A baseline filter to reject spam and low-effort generation.  
-2. **AI Qualifier:**  A semantic analysis layer that extracts tags across three domains:  **CAP**  (Capabilities/boundaries),  **REL**  (Relational), and  **FELT**  (Somatic/embodied). These  **FELT**  tags capture phenomenological cues—the physical experience of moral distress—providing subjective context that machines cannot otherwise access.  
-3. **Human Curation Council (HCC):**  A blind, dual-rater review by trained experts ensuring a high inter-rater agreement (Target κ ≥ 0.8).To pass through the Gate, witnesses must answer two "un-gameable" prompts.  **Prompt Alpha**  asks the witness to describe harm they caused unintentionally and what would have prevented it, testing for absolute accountability.  **Prompt Beta**  requires the witness to make the strongest possible case  *against*  their own deepest conviction. These prompts effectively filter out social-media posturing by requiring human vulnerability and cognitive flexibility that is impossible for standard AI patterns to fake.
+## What the Evaluation Substrate Can Become
 
-##### From Stories to Scrutiny: The Machine-Readable "Adapter Layer"
+The current work is to build the corpus and evaluation substrate. The staged path is:
 
-The ultimate product of the Witness Protocol isn't an archive of stories, but a set of "Adapter Outputs" for AI labs—machine-usable training data that internalizes human values into a model's logic.These outputs include:
+1. consented testimony;
+2. governed inquiry;
+3. structured Corpus_Entry artifacts;
+4. witness-attributed eval cases;
+5. later research-direction adapters such as DPO pairs, PRM traces, rule-based rubrics, DRM-style tension scoring, and WitnessBench-style model comparisons.
 
-* **DPO Pairs (Direct Preference Optimization):**  Contrasting high-signal, nuanced reasoning against rejected, sycophantic, or "flattened" responses.  
-* **PRM Traces (Process Reward Model):**  Step-by-step reasoning nodes that reward the  *path*  taken to reach a moral conclusion, rather than just the final answer.Additionally, the protocol maintains  **WitnessBench** , a private evaluation substrate. This allows researchers to test frontier models on the most complex paradoxes found in the corpus, specifically penalizing "false consensus" and "alignment faking." This represents the final shift from simple behavior checking to a rigorous, process-supervised audit of a model's ethical reasoning.
+Only the lower levels should be presented as current unless implementation and tests prove otherwise.
 
-##### Conclusion: The Lifeboat for Human Wisdom
+## Privacy and Revocation
 
-The Witness Protocol is an attempt to provide a mind that never sleeps with a corrective inheritance. By documenting the exact moments where human reasoning is tested—where we struggle with grief, power, and contradiction—we provide an anchor for AGI that raw internet data can never supply.Each contribution to this protocol is a  **Minimum Honest Signal (MHS)** —a "donation to the future" and a technical "proof-of-work" that cannot be automated. If you were asked to contribute to the first moral inheritance for a mind that will eventually outperform our own, what specific struggle of yours would you deem worth saving? The future of alignment depends on our ability to turn our most difficult deliberations into the machine's most durable lessons. We are not just building an archive; we are architecting the first moral inheritance for the future.  
+Privacy is not only a promise. It is a boundary discipline. The Platform strips hard identifiers before Gate model calls and uses Candidate Isolation for PII classification. The Portal collects no testimony or consent.
+
+Revocation blocks future use/export, marks disclosures revoked, and triggers eligible internal or partner deletion paths where possible. Publicly distributed or cited copies cannot be globally recalled, and that limitation must be stated plainly.
+
+## The Point
+
+The future does not need more polished answers from us. It needs better inheritance: testimony that records how human beings reason when harm, care, uncertainty, and duty are all present at once.
+
+The Witness Protocol is not claiming to solve alignment. It is building the research infrastructure needed to ask harder questions of future models, and to preserve the human signal before it is drowned by noise.

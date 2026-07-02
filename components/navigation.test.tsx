@@ -68,7 +68,7 @@ describe("SiteFooter (Req 2.4)", () => {
 
     // Foundation identity.
     expect(
-      within(footer).getByText("Stichting The Witness Protocol Foundation"),
+      within(footer).getByText("The Witness Protocol Foundation initiative"),
     ).toBeInTheDocument();
 
     // Current project phase status.

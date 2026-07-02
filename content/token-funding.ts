@@ -4,7 +4,7 @@
 // (Req 16.1–16.7). This module is server-only: it imports `qrcode` to generate
 // QR data URLs at build/render time (the page that consumes it is a server
 // component). No wallet-connect, no on-chain transactions, no custody — the
-// addresses are static and information-only (Req 16.5).
+// contribution rails remain disabled until verified addresses are approved.
 
 import QRCode from "qrcode";
 import { containsProhibitedInvestmentLanguage } from "@/lib/funding-compliance";
@@ -17,35 +17,39 @@ export interface TokenOption {
   symbol: string;
   /** Network the address belongs to, e.g. "Bitcoin mainnet". */
   network: string;
-  /** Static, information-only donation wallet address. */
+  /** Static, information-only donation wallet address once verified. */
   address: string;
 }
 
 /**
- * Supported donation tokens. Static, information-only addresses (Req 16.2).
- *
- * ponytail: placeholder addresses for the alpha — replace with the Foundation's
- * real published donation addresses before launch. They are syntactically valid
- * so the QR codes and copy controls render correctly in the meantime.
+ * Keep token transfer affordances disabled until the Foundation has approved
+ * real contribution addresses. This prevents placeholder strings from becoming
+ * accidental transfer instructions.
+ */
+export const TOKEN_ADDRESSES_VERIFIED = false;
+
+/**
+ * Supported donation tokens. Addresses are intentionally non-transfer strings
+ * while TOKEN_ADDRESSES_VERIFIED is false.
  */
 export const TOKEN_OPTIONS: readonly TokenOption[] = [
   {
     name: "Bitcoin",
     symbol: "BTC",
     network: "Bitcoin mainnet",
-    address: "bc1qexampledonationaddressplaceholder0xwitnessprotocol",
+    address: "PENDING_VERIFIED_BTC_ADDRESS",
   },
   {
     name: "Ethereum",
     symbol: "ETH",
     network: "Ethereum mainnet (ERC-20)",
-    address: "0x000000000000000000000000000000000WitnessP",
+    address: "PENDING_VERIFIED_ETH_ADDRESS",
   },
   {
     name: "USD Coin",
     symbol: "USDC",
     network: "Ethereum mainnet (ERC-20)",
-    address: "0x000000000000000000000000000000000WitnessU",
+    address: "PENDING_VERIFIED_USDC_ADDRESS",
   },
 ] as const;
 
@@ -57,7 +61,7 @@ export const TOKEN_OPTIONS: readonly TokenOption[] = [
 export const TOKEN_FUNDING_COPY = {
   heading: "Token donations",
   intro:
-    "Support the Foundation with a cryptocurrency donation. These contributions are gifts to a non-commercial research mission and are not an investment, confer no financial return, and grant no programmatic, governance, or other rights.",
+    "Token contribution rails are being prepared for the non-commercial research mission. Contributions will be donations only: not an investment, no financial return, and no programmatic, governance, or other rights.",
 } as const;
 
 /**
@@ -66,11 +70,11 @@ export const TOKEN_FUNDING_COPY = {
  * and custodies no funds.
  */
 export const CRYPTO_DISCLAIMER =
-  "Token contributions are made directly on-chain. This Portal does not connect wallets, process transactions, or custody funds. Send only from a wallet you control, and verify the address before sending.";
+  "Verified token contribution addresses are pending Foundation approval. Do not send funds until verified addresses are published through the official site. This Portal does not connect wallets, process transactions, or custody funds.";
 
 /** The message shown in place of contribution controls when the guard trips. */
 export const COMPLIANCE_BLOCKED_MESSAGE =
-  "Token contribution options are unavailable while the funding copy is under review. Wallet addresses, QR codes, and copy controls are disabled to ensure donations are never framed as an investment.";
+  "Token contribution options are unavailable while verified addresses are pending approval. Wallet addresses, QR codes, and copy controls are disabled so no visitor can send funds to a placeholder address.";
 
 /** A token card enriched with its build-time-generated QR data URL. */
 export interface TokenCardData extends TokenOption {
@@ -100,6 +104,7 @@ export interface TokenFundingView {
 export async function buildTokenFundingView(
   tokens: readonly TokenOption[] = TOKEN_OPTIONS,
   adjacentCopy: readonly string[] = [],
+  addressesVerified: boolean = TOKEN_ADDRESSES_VERIFIED,
 ): Promise<TokenFundingView> {
   const scanned: string[] = [
     TOKEN_FUNDING_COPY.heading,
@@ -111,6 +116,12 @@ export async function buildTokenFundingView(
 
   if (containsProhibitedInvestmentLanguage(scanned)) {
     // Fail closed (Req 16.7): no addresses, no QR codes, no copy controls.
+    return { cards: [], disabled: true };
+  }
+
+  if (!addressesVerified) {
+    // Fail closed until verified addresses are approved: no address text, no QR
+    // codes, and no copy controls render on the public page.
     return { cards: [], disabled: true };
   }
 

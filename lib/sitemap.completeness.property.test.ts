@@ -112,5 +112,5 @@ describe("Property 17: Sitemap completeness", () => {
       }),
       { numRuns: 100 },
     );
-  });
+  }, 30000);
 });

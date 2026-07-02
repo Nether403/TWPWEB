@@ -116,7 +116,7 @@ export default function HomePage() {
       {/* Mission + current phase (Req 3.1). */}
       <section className="flex max-w-3xl flex-col gap-6">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted">
-          Stichting The Witness Protocol Foundation · {PHASE_STATUS}
+          The Witness Protocol Foundation initiative · {PHASE_STATUS}
         </p>
         <h1 className="text-4xl tracking-wide sm:text-5xl">
           A better dataset for AI alignment

@@ -11,7 +11,7 @@
 //  - The copy-to-clipboard control shows a confirmation (Clipboard API mocked)
 //    and falls back to selectable text when the Clipboard API is unavailable
 //    (Req 16.4)
-//  - The on-chain / no-custody crypto disclaimer is present (Req 16.5)
+//  - The verified-address-pending / no-custody crypto disclaimer is present (Req 16.5)
 //  - The compliance guard disables wallet addresses, QR codes, and copy
 //    controls when prohibited investment language is present in the token
 //    funding view (Req 16.7) — verified at both layers: buildTokenFundingView
@@ -60,8 +60,14 @@ function renderTokenFunding(overrides: Partial<React.ComponentProps<typeof Token
 // buildTokenFundingView — the build-time compliance guard (Req 16.7)
 // ---------------------------------------------------------------------------
 describe("buildTokenFundingView (Req 16.2, 16.7)", () => {
-  it("returns one QR-coded card per token for compliant copy", async () => {
+  it("fails closed by default while verified addresses are pending", async () => {
     const view = await buildTokenFundingView();
+    expect(view.disabled).toBe(true);
+    expect(view.cards).toEqual([]);
+  });
+
+  it("returns one QR-coded card per token only when addresses are explicitly verified", async () => {
+    const view = await buildTokenFundingView(TOKEN_OPTIONS, [], true);
     expect(view.disabled).toBe(false);
     expect(view.cards).toHaveLength(TOKEN_OPTIONS.length);
     for (const card of view.cards) {
@@ -71,9 +77,11 @@ describe("buildTokenFundingView (Req 16.2, 16.7)", () => {
   });
 
   it("fails closed (no cards) when prohibited investment language is in the view (Req 16.7)", async () => {
-    const view = await buildTokenFundingView(TOKEN_OPTIONS, [
-      "Contribute now to receive a financial return on your investment.",
-    ]);
+    const view = await buildTokenFundingView(
+      TOKEN_OPTIONS,
+      ["Contribute now to receive a financial return on your investment."],
+      true,
+    );
     expect(view.disabled).toBe(true);
     expect(view.cards).toEqual([]);
   });
@@ -89,13 +97,13 @@ describe("TokenFunding component (Req 16.4, 16.5, 16.7)", () => {
     Reflect.deleteProperty(navigator, "clipboard");
   });
 
-  it("renders the address, QR code, and disclaimer in the enabled state (Req 16.2, 16.5)", () => {
+  it("renders the address, QR code, and disclaimer in the explicitly enabled fixture state (Req 16.2, 16.5)", () => {
     renderTokenFunding();
 
     expect(screen.getByText(CARD.address)).toBeInTheDocument();
     const qr = screen.getByRole("img", { name: /QR code for the Bitcoin/i });
     expect(qr).toHaveAttribute("src", CARD.qrDataUrl);
-    // On-chain / no-custody disclaimer is always shown.
+    // Verified-address-pending / no-custody disclaimer is always shown.
     expect(screen.getByText(CRYPTO_DISCLAIMER)).toBeInTheDocument();
     expect(screen.getByText(/does not connect wallets/i)).toBeInTheDocument();
   });
@@ -158,20 +166,20 @@ describe("/fund page (Req 15.1, 15.2, 15.3, 16.1, 16.2, 16.5, 16.6)", () => {
     expect(screen.getByText("EXAMPLEXXX")).toBeInTheDocument();
     expect(screen.getByText(/bank transfer & wire donations/i)).toBeInTheDocument();
 
-    // Token content: each token name and its network is shown (Req 16.2).
-    // (Networks may repeat across tokens, e.g. ETH and USDC both on ERC-20.)
-    for (const token of TOKEN_OPTIONS) {
-      expect(screen.getByText(token.name)).toBeInTheDocument();
-      expect(screen.getAllByText(token.network).length).toBeGreaterThan(0);
-    }
+    // Token content remains visible, but transfer controls are disabled until
+    // verified addresses are approved.
     expect(screen.getByRole("heading", { name: /^token donations$/i })).toBeInTheDocument();
+    expect(screen.getByRole("alert")).toHaveTextContent(/verified addresses are pending/i);
+    for (const token of TOKEN_OPTIONS) {
+      expect(screen.queryByText(token.address)).not.toBeInTheDocument();
+    }
 
     // Donation/grant framing, never investment framing (Req 15.1, 16.1).
     expect(screen.getByText(/donation or grant — never an investment/i)).toBeInTheDocument();
     expect(screen.getAllByText(/not an investment/i).length).toBeGreaterThan(0);
 
-    // On-chain / no-custody crypto disclaimer (Req 16.5).
-    expect(screen.getByText(/made directly on-chain/i)).toBeInTheDocument();
+    // Verified-address-pending / no-custody crypto disclaimer (Req 16.5).
+    expect(screen.getByText(/do not send funds until verified addresses/i)).toBeInTheDocument();
   });
 
   it("renders the Curatorial Neutrality Statement adjacent to BOTH cash and token options (Req 15.3, 16.6)", async () => {

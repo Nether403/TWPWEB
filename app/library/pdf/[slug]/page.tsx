@@ -83,6 +83,16 @@ export default async function PdfPreviewPage({ params }: PageProps) {
         </a>
       </header>
 
+      <aside className="border border-border bg-bg p-5 text-sm leading-relaxed text-muted">
+        PDF files are preserved as source documents and may contain older or
+        research-direction language. Current public claims are governed by the
+        live Portal copy and the public claims guide: Phase 5 Beta v0.9 research
+        infrastructure, not a product and not a solved-alignment claim. Treat
+        RFC-3161/IPFS provenance, WitnessBench-style adapter outputs, and similar
+        model-control mechanisms as planned or research direction unless a live
+        status page says otherwise.
+      </aside>
+
       {/* In-page preview (Req 6.2). `<object>` is the primary embed; the nested
           `<iframe>` is the fallback for browsers that decline to render the
           object, and the inner link is the last-resort fallback for browsers

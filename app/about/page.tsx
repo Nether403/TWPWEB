@@ -46,12 +46,12 @@ const METHODOLOGY: {
   },
   {
     heading: "The outputs — model-usable supervision",
-    body: "The human-readable archive is not the product. Vetted testimony is transformed into preference pairs, process-reward traces, rule-based reward rubrics, and private evaluation cases — the model-facing artifacts that make the corpus an evaluation substrate rather than a reading list.",
+    body: "The human-readable archive is not the endpoint. The live path is building toward model-facing evaluation artifacts: consented Corpus_Entry bundles, witness-attributed eval cases, and later research-direction adapters such as preference pairs, process-reward traces, and rule-based reward rubrics. The current claim is an evaluation substrate, not completed model training.",
     demo: { label: "Trace a record's provenance", href: "/demos/provenance" },
   },
   {
     heading: "Privacy by architecture — consent as a system invariant",
-    body: "Identity and testimony are kept in separate rooms. A two-pass de-identification strip removes hard identifiers before any external model sees the text, records are hashed and timestamped for tamper-evidence, and consent revocation cascades through the pipeline as a hardcoded behaviour — not just a legal promise.",
+    body: "Identity and testimony are kept in separate rooms. The Platform strips hard identifiers before Gate model calls, uses Candidate Isolation for PII classification, and keeps runtime testimony behind consent gates. Revocation blocks future use/export and marks disclosures revoked; eligible internal and partner-held copies are removed where technically and contractually possible, while already public distributed copies cannot be globally recalled.",
     demo: { label: "Simulate a consent revocation", href: "/demos/revocation" },
   },
 ];
@@ -137,10 +137,11 @@ export default function AboutPage() {
           </h2>
         </div>
         <p className="max-w-2xl text-base leading-relaxed text-fg">
-          The work is stewarded by <strong>Stichting The Witness Protocol
-          Foundation</strong>, a Dutch non-profit legally isolated from
-          commercial incentives. Contributions are donations or grants toward an
-          auditable public good — never an investment or a financial return.
+          The work is stewarded by <strong>The Witness Protocol Foundation
+          initiative</strong>, with Dutch Stichting registration in progress and
+          a purpose-over-profit mandate. Contributions are donations or grants
+          toward an auditable public good — never an investment or a financial
+          return.
         </p>
         <p className="max-w-2xl text-base leading-relaxed text-muted">
           The Protocol was founded by <strong>{FOUNDER.name}</strong>, an AI

@@ -6,17 +6,17 @@
 > Invited_Professional; `researcher` absorbs Researcher + Philosopher +
 > Legal_Expert; `funder` is Investor. The former persona names remain accepted
 > as front-matter aliases in the Content Loader, so tagged content still
-> resolves. Read the "six audiences" references below through this mapping; the
+> resolves. Read any older persona references through this mapping; the
 > `Audience_Router` design is otherwise unchanged (one static page per audience,
 > tag-based surfacing, real actions link out to the Platform).
 
 ## Overview
 
-The Witness Protocol Portal is a statically generated Next.js website that consolidates the Foundation's existing assets — markdown blog posts, articles, papers, reports, PDFs, PNG infographics, PPTX slide decks, and MP4 videos — into a single, austere, publicly accessible information hub. It serves six audiences (Potential_Witness, Invited_Professional, Researcher, Philosopher, Legal_Expert, Investor), routes each to relevant content and calls to action, and carries forward four interactive demonstrations prototyped in the draft files (`draft_witness_protocol_site.tsx`, `draft2_witness_protocol_site.tsx`): the Inquisitor transcript comparator, the cryptographic provenance explorer, the consent revocation simulator, and the Gate self-assessment simulator.
+The Witness Protocol Portal is a statically generated Next.js website that consolidates the Foundation's existing assets — markdown blog posts, articles, papers, reports, PDFs, PNG infographics, PPTX slide decks, and MP4 videos — into a single, austere, publicly accessible information hub. It serves three audience groups (`contributor`, `researcher`, `funder`), routes each to relevant content and calls to action, and carries forward four interactive demonstrations prototyped in the draft files (`draft_witness_protocol_site.tsx`, `draft2_witness_protocol_site.tsx`): the Inquisitor transcript comparator, the cryptographic provenance explorer, the consent revocation simulator, and the Gate self-assessment simulator.
 
 ### Front-of-House / Back-of-House Boundary
 
-The Portal is strictly **front-of-house**: a public, informational surface. It is paired with an external **Platform** — the existing, live `TWP-platform` control plane (Next.js + Supabase + Drizzle, Phase 5 Alpha) — which is **back-of-house** and owns every real action. The Platform already implements the real Gate intake, the reviewer/MHS packet and passwordless intake, participation and consent records, authentication, the audit log, and the real Inquisitor dialogue engine.
+The Portal is strictly **front-of-house**: a public, informational surface. It is paired with an external **Platform** — the existing, live `TWP-platform` control plane (Next.js + Supabase + Drizzle, Phase 5 Beta v0.9 live) — which is **back-of-house** and owns every real action. The Platform already implements the real Gate intake, the reviewer/MHS packet and passwordless intake, participation and consent records, authentication, the audit log, and the real Inquisitor dialogue engine.
 
 The Portal does **not** reimplement any of those. It has no authentication, no testimony intake, no consent records, and no audit log of its own (Req 1). Whenever a Visitor wants to take a real action, the Portal **links out** to the corresponding Platform surface. The new value the Portal adds — the content library, media galleries, audience journeys, funding information, and four explicitly-simulated demonstrations — does not exist on the Platform today.
 
@@ -52,7 +52,7 @@ The four interactive demos remain in the Portal as explicitly-simulated client c
 | Binary assets (PDF/PPTX/MP4/PNG) | Copied into `public/assets/...` by a build step; referenced by manifest | Next.js only serves static files from `public/`; source folders sit at workspace root. |
 | Interactive demos | Client components with hardcoded mock data, each linking to its real Platform counterpart | Requirements explicitly state these are simulated demonstrations (Req 11–14); the real actions live on the Platform (Req 1). No backend, no real crypto. |
 | Cash funding | Static bank/wire **donation/grant** details + invoice request form | Donations/grants only, never investment language (Req 15). |
-| Token funding | Static wallet addresses + generated QR codes, copy-to-clipboard | Information-only donations, no wallet-connect, no rights or return conferred (Req 16). |
+| Token funding | Informational token contribution section with address/QR/copy controls disabled until verified addresses are approved | Information-only donations, no wallet-connect, no custody, no rights or return conferred, and no accidental transfer path to placeholder addresses (Req 16). |
 | Form backend | Platform's existing Supabase (persistence) + Resend (email) stack and conventions | Portal-owned forms reuse the Platform's Supabase + Resend stack but write to a dedicated, isolated `portal_submissions` table via an INSERT-only, least-privilege credential (RLS insert-only) that cannot read or reach the witness/consent/audit tables — not a broad service-role key, and not a separate parallel data store (Req 1, Req 17.5). |
 | Input validation | Zod schemas shared between client and server route handlers | Single source of validation truth (Req 17.3). |
 
@@ -176,7 +176,7 @@ function fileNameToSlug(fileName: string): string;
 function fileNameToTitle(fileName: string): string; // strips extension, replaces _/- with spaces, title-cases
 ```
 
-The loader is pure with respect to file contents: given the same bytes it produces the same `ContentItem`. Files that throw during parse are excluded and recorded in `skipped` rather than failing the whole build (Req 5.5). After loading, the loader checks tag coverage: if any of the six audiences has zero tagged items, it records that audience in `audienceWarnings` and emits a build-log warning (Req 21.6). The default tag set assigned to untagged files guarantees every published item is reachable from at least one audience journey (Req 21.5).
+The loader is pure with respect to file contents: given the same bytes it produces the same `ContentItem`. Files that throw during parse are excluded and recorded in `skipped` rather than failing the whole build (Req 5.5). After loading, the loader checks tag coverage: if any of the three canonical audiences has zero tagged items, it records that audience in `audienceWarnings` and emits a build-log warning (Req 21.6). The default tag set assigned to untagged files guarantees every published item is reachable from at least one audience journey (Req 21.5).
 
 ### Navigation_System
 
@@ -523,7 +523,7 @@ Secrets (Supabase keys, Resend API key) live only in server environment variable
 | 6 Filter by type and audience | `ContentItem[]` × type selector × audience selector |
 | 7 Name transform | arbitrary file names |
 | 8 Media completeness | `MediaAsset[]` per kind |
-| 9 Audience journey + tag surfacing | enumerate six audiences × `ContentItem[]` with tags |
+| 9 Audience journey + tag surfacing | enumerate three audiences × `ContentItem[]` with tags |
 | 10 Inquisitor fidelity | enumerate scenarios |
 | 11 Provenance completeness | enumerate mock records |
 | 12 Revocation reset | random trigger/reset sequences |

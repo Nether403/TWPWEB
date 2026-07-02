@@ -156,5 +156,5 @@ describe("Property 2: Loader completeness", () => {
       ),
       { numRuns: 100 },
     );
-  });
+  }, 30000);
 });

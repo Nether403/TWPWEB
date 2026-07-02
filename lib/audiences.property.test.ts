@@ -63,7 +63,7 @@ const CATEGORIES: ContentCategory[] = ["blog", "article", "paper", "report"];
 
 // A ContentItem arbitrary. Only `audienceTags` drives contentForAudience, so the
 // other fields are kept minimal but type-faithful. audienceTags is a (possibly
-// empty) subset of the six audiences with no duplicates, mirroring the loader's
+// empty) subset of the three canonical audiences with no duplicates, mirroring the loader's
 // output shape.
 const contentItem: fc.Arbitrary<ContentItem> = fc.record({
   slug: fc.string({ minLength: 1, maxLength: 12 }),

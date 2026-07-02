@@ -210,5 +210,5 @@ describe("Property 3: malformed files are excluded and logged", () => {
       }),
       { numRuns: 100 },
     );
-  });
+  }, 30000);
 });

@@ -15,7 +15,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Legal — The Witness Protocol",
   description:
-    "Legal notice for Stichting The Witness Protocol Foundation: the entity behind the project, the non-commercial nature of contributions, use of site content, and disclaimers.",
+    "Legal notice for The Witness Protocol Foundation initiative: the entity status, non-commercial nature of contributions, use of site content, and disclaimers.",
 };
 
 export default function LegalPage() {
@@ -27,9 +27,10 @@ export default function LegalPage() {
         </p>
         <h1 className="text-4xl tracking-wide sm:text-5xl">Legal notice</h1>
         <p className="max-w-2xl text-lg leading-relaxed text-fg">
-          This website is published by <strong>Stichting The Witness Protocol
-          Foundation</strong>, a non-profit foundation established in the
-          Netherlands and governed by Dutch law.
+          This website is published by <strong>The Witness Protocol Foundation
+          initiative</strong>, with Dutch Stichting registration in progress. It
+          is governed as a non-commercial research initiative while formal entity
+          registration is being finalized.
         </p>
       </header>
 
@@ -38,7 +39,7 @@ export default function LegalPage() {
           A non-commercial mission
         </h2>
         <p className="text-base leading-relaxed text-fg">
-          The Foundation operates on a purpose-over-profit basis. Any
+          The initiative operates on a purpose-over-profit basis. Any
           contribution — cash or token — is a donation or grant toward a
           non-commercial research mission. It is <strong>not</strong> an
           investment, confers no equity, ownership, or financial return, and
@@ -59,7 +60,7 @@ export default function LegalPage() {
           The papers, reports, articles, infographics, and other materials
           published here are provided for research and educational purposes.
           Except where a specific licence is stated, content remains the
-          property of the Foundation or its respective authors. Please contact
+          property of the initiative or its respective authors. Please contact
           us before redistributing or reusing material, and cite the source.
         </p>
       </section>
@@ -73,7 +74,7 @@ export default function LegalPage() {
           illustrations of the Protocol's methodology — they are not the real
           instruments and perform no real submission, review, or consent action.
           Real actions are handled on the separate live Platform, which this
-          site links out to. The Foundation is not responsible for the content
+          site links out to. The initiative is not responsible for the content
           or availability of third-party sites reached through outbound links.
         </p>
       </section>
@@ -82,16 +83,16 @@ export default function LegalPage() {
         <h2 className="text-2xl tracking-wide sm:text-3xl">No warranty</h2>
         <p className="text-base leading-relaxed text-fg">
           This website and its content are provided &ldquo;as is,&rdquo; without
-          warranty of any kind. The Foundation makes no guarantee that the
+          warranty of any kind. The initiative makes no guarantee that the
           information is complete or current, and accepts no liability for any
           loss arising from reliance on it.
         </p>
       </section>
 
       <p className="border-t border-border pt-8 font-mono text-xs leading-relaxed text-muted">
-        This notice is a summary, not the Foundation's complete terms. For legal
-        enquiries, the formal terms, or registration details, contact Stichting
-        The Witness Protocol Foundation via the{" "}
+        This notice is a summary, not complete terms. For legal enquiries,
+        formal terms, or registration details, contact The Witness Protocol
+        Foundation initiative via the{" "}
         <Link
           href="/contact"
           className="text-fg underline underline-offset-4 hover:text-muted"

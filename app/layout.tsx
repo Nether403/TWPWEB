@@ -26,9 +26,36 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://twpf.online"),
   title: "The Witness Protocol",
   description:
     "A first-party, consented corpus of high-signal human moral-reasoning testimony for AI alignment.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "The Witness Protocol",
+    title: "The Witness Protocol",
+    description:
+      "A first-party, consented corpus of high-signal human moral-reasoning testimony for AI alignment.",
+    images: [
+      {
+        url: "/twp-logo-white.png",
+        width: 512,
+        height: 512,
+        alt: "The Witness Protocol logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "The Witness Protocol",
+    description:
+      "A first-party, consented corpus of high-signal human moral-reasoning testimony for AI alignment.",
+    images: ["/twp-logo-white.png"],
+  },
 };
 
 export default function RootLayout({

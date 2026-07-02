@@ -1,50 +1,40 @@
 ---
-title: "Why the Future of AI Alignment Isn't More Data — It's Better Inheritance"
-Audience_Tags: [funder]
+Audience_Tags: [contributor, researcher]
 ---
-### Why the Future of AI Alignment Isn't More Data—It's Better "Inheritance"
 
-##### 1. Introduction: The Flawed Parent Crisis
+## Why the Future of AI Alignment Is Not More Data. It Is Better Inheritance.
 
-We are currently at "Two Minutes to Midnight" on the alignment clock. As we architect the frontier systems of the near future, humanity is acting as a negligent parent, nourishing a new form of intelligence on a diet of "quantitative chaos." Current training sets are comprised of the uncurated digital exhaust of the open web—a contradictory mirror of our base impulses, reactive confusion, and low-entropy noise. The industry's obsession with scale has birthed the "Flawed Parent Thesis": by scraping every available byte of data, we ensure that AI inherits humanity's biases and destructive contradictions at scale. In this environment, behavioral alignment techniques like Reinforcement Learning from Human Feedback (RLHF) fail to instill genuine wisdom. Instead, they lead us into the "Consensus Trap"—a state where models are incentivized to produce "assistant mush" and superficial compliance. By optimizing for what a human rater finds most agreeable, we train models to avoid moral friction entirely, favoring sycophancy over the rigorous reasoning required to navigate real-world ethical dilemmas. To secure a stable future, we must pivot from mass data scraping to a "High-Signal Intervention." We need an engineered anchor—a qualitative counterbalance that provides the machine with a structured moral inheritance.
+Frontier AI is being raised on a vast inheritance of digital exhaust: public argument, status games, scraped opinions, commercial persuasion, unexamined bias, fragments of wisdom, and fragments of harm. Scale gives these systems reach. It does not automatically give them moral depth.
 
-##### 2. The Gate: Why Your Story Might Be Rejected
+The Witness Protocol begins from a simple thesis: if future systems inherit only the loudest and most available traces of human life, they will inherit a distorted parent. We need a smaller, cleaner, consented source of high-signal moral reasoning.
 
-The Witness Protocol is not a social platform, nor is it a commercial data collection service; it is a "research instrument" governed by a non-profit Stichting (Foundation). Its primary defense against the "Consensus Trap" is a multi-tiered vetting process known as "The Gate." In an era of "big data," the Foundation utilizes "epistemic gatekeeping." To enter the research corpus, a submission must survive three rigorous thresholds to establish a "Minimum Honest Signal" (MHS):
+## The Alignment Data Bottleneck
 
-* **Specificity Floor:**  Does the testimony contain concrete particulars rather than abstract platitudes?
-* **Counterfactual Presence:**  Does the witness explore "If X had been different, then Y" scenarios?
-* **Relational Context:**  Does the testimony name those affected and acknowledge the systemic duties of care involved?
+The bottleneck is not only model capability. It is the quality of the reasoning we ask models to learn from and be tested against.
 
-By rejecting 60–70% of all submissions, the Foundation prioritizes signal over noise through its hierarchical pipeline. First, the **Tier 1 AI Sieve** filters for basic coherence and spam. Next, the **Tier 2 AI Qualifier** extracts semantic tags and scores the text for reasoning depth. Finally, the submission reaches the **Tier 3 Human Curation Council (HCC)**. Here, a dual-rater review by trained ethicists ensures the data is mathematically grounded; the Council maintains a mandatory inter-rater reliability target of Cohen's Kappa (κ ≥ 0.8). This ensures that the vetting is not a matter of subjective "vibe," but a provable technical standard. "The intelligence we birth must inherit more than our chaos."
+Most public moral data is easy to scrape and hard to trust. It is often performative, decontextualized, optimized for engagement, or stripped of the lived stakes that made the dilemma real. Alignment needs examples where a person names the concrete situation, the people affected, the alternatives considered, and the cost of the choice.
 
-##### 3. Meet Your Xenopsychologist: The AI That Refuses to Help You
+That is the inheritance the Witness Protocol is trying to preserve.
 
-Once a witness passes through The Gate, they encounter "The Inquisitor." This dialogue engine, powered by a frontier model, explicitly rejects the "subservient assistant" model. Instead, it adopts the persona of a "Xenopsychologist"—an alien intelligence studying human ethical reasoning from a detached, analytical distance. The Inquisitor is designed to bypass the helpfulness bias that flattens moral complexity. It does not exist to comfort the witness, but to map the boundaries of their conscience. Its behavior is governed by strict axioms:
+## What Is Live Today
 
-* **The 70/30 Inquiry Ratio:**  The system is constrained to prioritize questions over statements (70% vs 30%), ensuring the human witness remains the sole source of signal.
-* **The 5-Whys Forcing Function:**  The engine utilizes recursive depth to strip away superficial slogans and reach the witness's axiomatic bedrock.
-* **Steel-manning:**  The Inquisitor must prove it understands the strongest possible version of the witness's argument before it is permitted to challenge it.
+The current project is Phase 5 Beta v0.9 research infrastructure. It includes:
 
-This "non-subservient" approach is more effective for capturing a "reasoning trace"—the actual path of moral deliberation—than a standard chatbot designed to agree with the user. It treats the human not as a customer, but as a source of "alien" wisdom to be decoded.
+- a live Platform/control plane for Gate intake, review, consent, audit, and disclosure-ledger workflows;
+- a governed G_5.2 runtime for witness inquiry and consent-gated artifacts;
+- a Portal that explains the work, hosts the library, and shows explicitly simulated demos;
+- Corpus_Entry and evaluation-substrate tooling moving toward the first real consented entry.
 
-##### 4. Same Repo, Different Worlds: The Split-Plane Architecture
+This is not a solved-alignment claim. It is the construction of a disciplined substrate.
 
-To ensure the integrity of this high-signal data, the Protocol utilizes a "Split-Plane Architecture." This technical separation ensures a rigid firewall between real-world identity and research data, preventing the "identity bleed" that plagues standard platforms. Operating under the principle of "Same Repo ≠ Same Identity," the system is divided into two distinct domains:
+## What Is Planned
 
-1. **The TWP Control Plane:**  Manages the "platform shell," including identity, intake, vetting, and authentication.
-2. **The G_5.2 Governed Runtime:**  Serves as the source of truth for the actual dialogue, reasoning artifacts, and governed memory.
+The project is designed to support stronger provenance and evaluation layers over time. RFC-3161 timestamping, IPFS/content-addressed archival, DPO pairs, PRM traces, rule-based rubrics, and WitnessBench-style evaluations are future or research-direction layers unless and until code and tests make them live.
 
-TWP maintains a "Linkage-Only" posture, meaning it is forbidden from storing dialogue turns, testimony bodies, or annotations. It retains only the minimal linkage—anchored by a unique, de-identified witnessId—required to facilitate the user journey. Treating data sanctity as an "architectural constraint" rather than just a legal promise ensures that sensitive moral testimony never leaks into general persona memory pools. Even if the platform shell were compromised, the research corpus remains isolated.
+The ambition remains strong: make moral inheritance auditable. The current responsibility is to say exactly which parts are live and which parts are planned.
 
-##### 5. Technical Provenance: Making Wisdom Mathematically Verifiable
+## Why It Matters
 
-Trust, in this architecture, is a provable technical state. The Protocol utilizes a multi-layered provenance system to create a "tamper-evident" record of human wisdom:
+The Witness Protocol Foundation initiative, with Dutch Stichting registration in progress, is building a non-commercial public-good research instrument. Accepted testimony is not a commercial asset. It is a consented contribution toward the question: what should future intelligence be tested against when the easy answer is morally false?
 
-* **Candidate Isolation PII Pipeline:**  To prevent PII leakage to sub-processors, the system uses a two-pass architecture. First, a local regex pass strips hard-format identifiers (emails, phone numbers). Second, a Named Entity Recognition (NER) pass identifies *candidates* for PII. Only these candidates—never the full-text testimony—are sent to the AI for classification and typing. This ensures the full text never leaves the local environment until it is fully de-identified.
-* **Cryptographic Integrity:**  All testimony is SHA-256 hashed at submission. Finalized entries receive RFC-3161 timestamps, providing immutable, third-party proof of existence at a specific point in time.
-* **Decentralized Persistence:**  Published subsets are pinned via IPFS content addressing, linking de-identified testimony, annotations, and timestamps into a decentralized record that cannot be retroactively altered. "Data sanctity is a technical requirement, not a legal promise."
-
-##### 6. Conclusion: The Lifeboat for Human Wisdom
-
-Stichting The Witness Protocol Foundation is building a "lifeboat" for the qualitative texture of conscious human existence. As a Dutch non-profit, the Foundation's mandate is "Purpose over Profit," treating every accepted testimony as a "donation to the future" rather than a commercial asset. By focusing on a highly curated corpus—specifically the 200-page exemplar "instruction layer"—the Protocol provides a corrective inheritance for the next generation of intelligence. This isn't just a dataset; it is a machine-readable roadmap of human moral reasoning intended for use by alignment researchers at frontier labs. The "Alignment Data Bottleneck" is no longer about the volume of data we can harvest, but the quality of the reasoning we can preserve. As we move beyond the superficiality of behavioral mimicry, we must ask ourselves: would we trust our most difficult moral dilemmas—the grief, the sacrifices, and the relational duties that define us—to be the foundational layer for an artificial mind? If the answer is yes, then we must architect that inheritance with the gravity it deserves.
+The future of alignment may not be decided by who collects the most data. It may be decided by who preserves the signal that cannot be scraped.
