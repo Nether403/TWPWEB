@@ -1,0 +1,792 @@
+{
+  "app/about/page.tsx": {
+    "mtime": 1782992764.696887,
+    "ast_hash": "ce09b96dc07d80224d051ecb20bf54d4",
+    "semantic_hash": "ce09b96dc07d80224d051ecb20bf54d4"
+  },
+  "app/accessibility.test.tsx": {
+    "mtime": 1782469018.1253414,
+    "ast_hash": "c7576134e3e47166cfe8f0fd3dc2f334",
+    "semantic_hash": "c7576134e3e47166cfe8f0fd3dc2f334"
+  },
+  "app/api/forms/[type]/route.ts": {
+    "mtime": 1782466715.3848996,
+    "ast_hash": "6d4060a6d57417e5703332b077e53f65",
+    "semantic_hash": "6d4060a6d57417e5703332b077e53f65"
+  },
+  "app/audience/[audience]/page.test.tsx": {
+    "mtime": 1782914533.5324824,
+    "ast_hash": "d5d6179ed3d2f8a111393d7e5704d31d",
+    "semantic_hash": "d5d6179ed3d2f8a111393d7e5704d31d"
+  },
+  "app/audience/[audience]/page.tsx": {
+    "mtime": 1782918080.0072174,
+    "ast_hash": "59b6f4946cc012c04ff15532ce80c70c",
+    "semantic_hash": "59b6f4946cc012c04ff15532ce80c70c"
+  },
+  "app/contact/page.tsx": {
+    "mtime": 1782992832.0912387,
+    "ast_hash": "2cd68acffc82b59a4c747fbb1a6e2238",
+    "semantic_hash": "2cd68acffc82b59a4c747fbb1a6e2238"
+  },
+  "app/demos/gate/page.tsx": {
+    "mtime": 1782466745.757425,
+    "ast_hash": "ca312713a94111cd495fc454a4deacab",
+    "semantic_hash": "ca312713a94111cd495fc454a4deacab"
+  },
+  "app/demos/inquisitor/page.tsx": {
+    "mtime": 1782465594.7069907,
+    "ast_hash": "877e21c04b7615382163a09a6d59ab15",
+    "semantic_hash": "877e21c04b7615382163a09a6d59ab15"
+  },
+  "app/demos/provenance/page.tsx": {
+    "mtime": 1782468927.8923874,
+    "ast_hash": "c4ce7c3f571d8ccd732da82e9dbf1ed2",
+    "semantic_hash": "c4ce7c3f571d8ccd732da82e9dbf1ed2"
+  },
+  "app/demos/revocation/page.tsx": {
+    "mtime": 1782466710.9329376,
+    "ast_hash": "0bd5ee9140a30fde5c92eb54e75f8e58",
+    "semantic_hash": "0bd5ee9140a30fde5c92eb54e75f8e58"
+  },
+  "app/fund/funding.test.tsx": {
+    "mtime": 1782993221.9999683,
+    "ast_hash": "4aaa1bfec47c1824e7cafa020f55b7f1",
+    "semantic_hash": "4aaa1bfec47c1824e7cafa020f55b7f1"
+  },
+  "app/fund/page.tsx": {
+    "mtime": 1782993216.523344,
+    "ast_hash": "c124d0893423fc98d58c26727bbbf51d",
+    "semantic_hash": "c124d0893423fc98d58c26727bbbf51d"
+  },
+  "app/layout.tsx": {
+    "mtime": 1782998077.790799,
+    "ast_hash": "8876a18e14639ebdb01dc81f08339f1c",
+    "semantic_hash": "8876a18e14639ebdb01dc81f08339f1c"
+  },
+  "app/legal/page.tsx": {
+    "mtime": 1782992784.0608473,
+    "ast_hash": "440a49f0aa34df9125a9e296e8bc5c01",
+    "semantic_hash": "440a49f0aa34df9125a9e296e8bc5c01"
+  },
+  "app/library/[slug]/page.tsx": {
+    "mtime": 1782463765.7269797,
+    "ast_hash": "114edd29e4f41df7fed1825ce79f6912",
+    "semantic_hash": "114edd29e4f41df7fed1825ce79f6912"
+  },
+  "app/library/content-index.property.test.tsx": {
+    "mtime": 1782468703.3623536,
+    "ast_hash": "4ff72ff4534c8976b87f77805eaf91ec",
+    "semantic_hash": "4ff72ff4534c8976b87f77805eaf91ec"
+  },
+  "app/library/content-index.tsx": {
+    "mtime": 1782914468.2666774,
+    "ast_hash": "e86afdfc3120390f337866060c76044d",
+    "semantic_hash": "e86afdfc3120390f337866060c76044d"
+  },
+  "app/library/page.tsx": {
+    "mtime": 1782463801.141536,
+    "ast_hash": "150a9c5649a7287efe50f49ed6bd12ac",
+    "semantic_hash": "150a9c5649a7287efe50f49ed6bd12ac"
+  },
+  "app/library/pdf/[slug]/page.tsx": {
+    "mtime": 1782993626.2274358,
+    "ast_hash": "a92823010dd7573e8e0a6941df0cd9a8",
+    "semantic_hash": "a92823010dd7573e8e0a6941df0cd9a8"
+  },
+  "app/media/infographics/page.tsx": {
+    "mtime": 1782463878.3294148,
+    "ast_hash": "f30263247d732b259827e299b08d83a8",
+    "semantic_hash": "f30263247d732b259827e299b08d83a8"
+  },
+  "app/media/media-gallery.property.test.tsx": {
+    "mtime": 1782468745.715509,
+    "ast_hash": "194a523b0e175be228a21d59137a3856",
+    "semantic_hash": "194a523b0e175be228a21d59137a3856"
+  },
+  "app/media/media.test.tsx": {
+    "mtime": 1782468612.2214377,
+    "ast_hash": "4a188d4ce2f532d97a93385669a0fdf8",
+    "semantic_hash": "4a188d4ce2f532d97a93385669a0fdf8"
+  },
+  "app/media/slides/page.tsx": {
+    "mtime": 1782465583.2300465,
+    "ast_hash": "a76b6097bed47bcb6f488ef61a8b3ffd",
+    "semantic_hash": "a76b6097bed47bcb6f488ef61a8b3ffd"
+  },
+  "app/media/videos/page.tsx": {
+    "mtime": 1782465553.6202073,
+    "ast_hash": "098962a89111a7785b4f4b19bbb7c069",
+    "semantic_hash": "098962a89111a7785b4f4b19bbb7c069"
+  },
+  "app/not-found.tsx": {
+    "mtime": 1782440551.9817266,
+    "ast_hash": "503cb72ac818f922bc644df40771fae6",
+    "semantic_hash": "503cb72ac818f922bc644df40771fae6"
+  },
+  "app/page.test.tsx": {
+    "mtime": 1782914610.1774046,
+    "ast_hash": "4af689deeb6735c70a37bf3054d1ebcb",
+    "semantic_hash": "4af689deeb6735c70a37bf3054d1ebcb"
+  },
+  "app/page.tsx": {
+    "mtime": 1782992827.492658,
+    "ast_hash": "0be9b29d8755b9aa4235e0c995e74cba",
+    "semantic_hash": "0be9b29d8755b9aa4235e0c995e74cba"
+  },
+  "app/participate/page.tsx": {
+    "mtime": 1782463139.3567915,
+    "ast_hash": "14d3989ea2d6e637a35be661884e09e5",
+    "semantic_hash": "14d3989ea2d6e637a35be661884e09e5"
+  },
+  "app/platform-boundary.test.tsx": {
+    "mtime": 1782914564.021037,
+    "ast_hash": "cc51ad3c80cfe8f6d7d55d1ca63df27a",
+    "semantic_hash": "cc51ad3c80cfe8f6d7d55d1ca63df27a"
+  },
+  "app/privacy/page.tsx": {
+    "mtime": 1782992774.6384847,
+    "ast_hash": "ee0f3610d4a9b9c4425479abada3cbaa",
+    "semantic_hash": "ee0f3610d4a9b9c4425479abada3cbaa"
+  },
+  "app/sitemap.ts": {
+    "mtime": 1782467263.0147233,
+    "ast_hash": "8c3afc12d58fcf0400bca266a20ae767",
+    "semantic_hash": "8c3afc12d58fcf0400bca266a20ae767"
+  },
+  "app/theme-contrast.test.ts": {
+    "mtime": 1782468980.6242578,
+    "ast_hash": "bf9f678e779d6e9b4773b1182c4171e6",
+    "semantic_hash": "bf9f678e779d6e9b4773b1182c4171e6"
+  },
+  "components/contact-form.tsx": {
+    "mtime": 1782467865.874398,
+    "ast_hash": "09406d6df10e424cc14adf2b6f48486c",
+    "semantic_hash": "09406d6df10e424cc14adf2b6f48486c"
+  },
+  "components/curatorial-neutrality-statement.tsx": {
+    "mtime": 1782466778.3391562,
+    "ast_hash": "00398cb7e5f5d55758dcf171c716ffb9",
+    "semantic_hash": "00398cb7e5f5d55758dcf171c716ffb9"
+  },
+  "components/demos.test.tsx": {
+    "mtime": 1782469014.024014,
+    "ast_hash": "6bc881d64ec923c20fd7b9ca2d3766a3",
+    "semantic_hash": "6bc881d64ec923c20fd7b9ca2d3766a3"
+  },
+  "components/form-field.tsx": {
+    "mtime": 1782467836.8583322,
+    "ast_hash": "7c44fe686dc3f75d1726da69c8b6c326",
+    "semantic_hash": "7c44fe686dc3f75d1726da69c8b6c326"
+  },
+  "components/gate-simulator.tsx": {
+    "mtime": 1782466732.766316,
+    "ast_hash": "bc13ac0a3a53a9200418988a51989566",
+    "semantic_hash": "bc13ac0a3a53a9200418988a51989566"
+  },
+  "components/infographics-gallery.tsx": {
+    "mtime": 1782463865.7827027,
+    "ast_hash": "e260e90db9c657fd7c753c17cf2340e2",
+    "semantic_hash": "e260e90db9c657fd7c753c17cf2340e2"
+  },
+  "components/inquisitor-comparator.property.test.tsx": {
+    "mtime": 1782468289.9089177,
+    "ast_hash": "0affbe1639eb534618847d500042b4a5",
+    "semantic_hash": "0affbe1639eb534618847d500042b4a5"
+  },
+  "components/inquisitor-comparator.tsx": {
+    "mtime": 1782465583.1572452,
+    "ast_hash": "1f66ecf7d1dd805639a8ab5419552007",
+    "semantic_hash": "1f66ecf7d1dd805639a8ab5419552007"
+  },
+  "components/invoice-form.tsx": {
+    "mtime": 1782467892.4896717,
+    "ast_hash": "6d2992956f238753de23d61fa4c8fa03",
+    "semantic_hash": "6d2992956f238753de23d61fa4c8fa03"
+  },
+  "components/mobile-menu.tsx": {
+    "mtime": 1782441950.040651,
+    "ast_hash": "ef626e0f8533746ea4015ab067288ff6",
+    "semantic_hash": "ef626e0f8533746ea4015ab067288ff6"
+  },
+  "components/navigation.test.tsx": {
+    "mtime": 1782992818.9366794,
+    "ast_hash": "198873f47da72b053c6e4c23754a2989",
+    "semantic_hash": "198873f47da72b053c6e4c23754a2989"
+  },
+  "components/navigation.tsx": {
+    "mtime": 1782998077.9652486,
+    "ast_hash": "c05a90375b9d87f75572f9e95cdbebe7",
+    "semantic_hash": "c05a90375b9d87f75572f9e95cdbebe7"
+  },
+  "components/portal-forms.test.tsx": {
+    "mtime": 1782468060.2024508,
+    "ast_hash": "6acb83e4a80e5450bd29ece2043da2bc",
+    "semantic_hash": "6acb83e4a80e5450bd29ece2043da2bc"
+  },
+  "components/provenance-explorer.tsx": {
+    "mtime": 1782468916.7202559,
+    "ast_hash": "12ea09572b60493e64f37ef1a15b72c7",
+    "semantic_hash": "12ea09572b60493e64f37ef1a15b72c7"
+  },
+  "components/revocation-simulator.tsx": {
+    "mtime": 1782466696.6216376,
+    "ast_hash": "5f71bea9bba1271f326869a3723b4a93",
+    "semantic_hash": "5f71bea9bba1271f326869a3723b4a93"
+  },
+  "components/theme-controller.test.tsx": {
+    "mtime": 1782440726.3676333,
+    "ast_hash": "f3d252632e54c9a17af9b530917907a0",
+    "semantic_hash": "f3d252632e54c9a17af9b530917907a0"
+  },
+  "components/theme-controller.tsx": {
+    "mtime": 1782441343.3812945,
+    "ast_hash": "a47880029610f042d85e40084570b40d",
+    "semantic_hash": "a47880029610f042d85e40084570b40d"
+  },
+  "components/use-portal-form.ts": {
+    "mtime": 1782467804.7454655,
+    "ast_hash": "6815fd3b75693f8cac99c22515549c2a",
+    "semantic_hash": "6815fd3b75693f8cac99c22515549c2a"
+  },
+  "content/assets.test.ts": {
+    "mtime": 1782463337.1959333,
+    "ast_hash": "b1bced0ab460a5add3fbcf68dc83e830",
+    "semantic_hash": "b1bced0ab460a5add3fbcf68dc83e830"
+  },
+  "content/assets.ts": {
+    "mtime": 1782993252.6435566,
+    "ast_hash": "ceab26339d357943cfca10e0a835ff39",
+    "semantic_hash": "ceab26339d357943cfca10e0a835ff39"
+  },
+  "content/cash-funding.test.ts": {
+    "mtime": 1782468341.4650097,
+    "ast_hash": "3f2f79d3dcdfc1f7edb8b90383ea1930",
+    "semantic_hash": "3f2f79d3dcdfc1f7edb8b90383ea1930"
+  },
+  "content/cash-funding.ts": {
+    "mtime": 1782468274.417235,
+    "ast_hash": "4c0d0b46d6ad2b9dfba1bbfcb3a20e77",
+    "semantic_hash": "4c0d0b46d6ad2b9dfba1bbfcb3a20e77"
+  },
+  "content/filter.property.test.ts": {
+    "mtime": 1782992883.6705787,
+    "ast_hash": "fdfe18b317d0ca972114ff8bcda7537e",
+    "semantic_hash": "fdfe18b317d0ca972114ff8bcda7537e"
+  },
+  "content/filter.ts": {
+    "mtime": 1782470067.7635415,
+    "ast_hash": "2efe2cf59b8bfafc6eda4cf0f44d9c38",
+    "semantic_hash": "2efe2cf59b8bfafc6eda4cf0f44d9c38"
+  },
+  "content/loader.completeness.property.test.ts": {
+    "mtime": 1782993427.9072773,
+    "ast_hash": "ee01f699a82a017c63c58267c64130f6",
+    "semantic_hash": "ee01f699a82a017c63c58267c64130f6"
+  },
+  "content/loader.property.test.ts": {
+    "mtime": 1782993427.9437964,
+    "ast_hash": "97a53fdbd03368015ea91ca9aa8028bc",
+    "semantic_hash": "97a53fdbd03368015ea91ca9aa8028bc"
+  },
+  "content/loader.test.ts": {
+    "mtime": 1782914575.3309314,
+    "ast_hash": "7e96805d4b72cef17775e716a4a3e2bc",
+    "semantic_hash": "7e96805d4b72cef17775e716a4a3e2bc"
+  },
+  "content/loader.ts": {
+    "mtime": 1782919350.1595702,
+    "ast_hash": "ed7383e14e657f3ead9ac674172493e6",
+    "semantic_hash": "ed7383e14e657f3ead9ac674172493e6"
+  },
+  "content/markdown-structure.property.test.ts": {
+    "mtime": 1782468626.8557916,
+    "ast_hash": "b9750872d9f1d7571bb1a2b5489ec5fc",
+    "semantic_hash": "b9750872d9f1d7571bb1a2b5489ec5fc"
+  },
+  "content/transforms.property.test.ts": {
+    "mtime": 1782440593.532907,
+    "ast_hash": "a0ddeabd2c17e49433b25dd0d508c589",
+    "semantic_hash": "a0ddeabd2c17e49433b25dd0d508c589"
+  },
+  "content/transforms.test.ts": {
+    "mtime": 1782440398.359915,
+    "ast_hash": "6d5c5954708912fce7e9dffce3e6cc46",
+    "semantic_hash": "6d5c5954708912fce7e9dffce3e6cc46"
+  },
+  "content/transforms.ts": {
+    "mtime": 1782440386.654018,
+    "ast_hash": "d70b5763fe7474a10548c5e2e1361971",
+    "semantic_hash": "d70b5763fe7474a10548c5e2e1361971"
+  },
+  "content/types.ts": {
+    "mtime": 1782914362.5625901,
+    "ast_hash": "fb74f28a31a0163ae53075eab67de669",
+    "semantic_hash": "fb74f28a31a0163ae53075eab67de669"
+  },
+  "draft2_witness_protocol_site.tsx": {
+    "mtime": 1782481148.419146,
+    "ast_hash": "bfe0417461237021fcb3700edaf952ce",
+    "semantic_hash": "bfe0417461237021fcb3700edaf952ce"
+  },
+  "draft_witness_protocol_site.tsx": {
+    "mtime": 1782481147.6802747,
+    "ast_hash": "6aff24631b5b421d66805a60d485e945",
+    "semantic_hash": "6aff24631b5b421d66805a60d485e945"
+  },
+  "lib/audiences.property.test.ts": {
+    "mtime": 1782992887.576643,
+    "ast_hash": "7f45aa959ee1c3092d23c8177fe0b555",
+    "semantic_hash": "7f45aa959ee1c3092d23c8177fe0b555"
+  },
+  "lib/audiences.ts": {
+    "mtime": 1782914436.343078,
+    "ast_hash": "edc361c0237e26d061a37110b67ca4e9",
+    "semantic_hash": "edc361c0237e26d061a37110b67ca4e9"
+  },
+  "lib/external-links.test.ts": {
+    "mtime": 1782911918.954367,
+    "ast_hash": "65df2811776a5df5540b524c5df72d2d",
+    "semantic_hash": "65df2811776a5df5540b524c5df72d2d"
+  },
+  "lib/external-links.ts": {
+    "mtime": 1782911972.0777245,
+    "ast_hash": "ec3fbf5244998a83ae24ae7ca2393364",
+    "semantic_hash": "ec3fbf5244998a83ae24ae7ca2393364"
+  },
+  "lib/forms.property.test.ts": {
+    "mtime": 1782466724.0780067,
+    "ast_hash": "30b12b9a8a60fd2102c3eb10631ac5ef",
+    "semantic_hash": "30b12b9a8a60fd2102c3eb10631ac5ef"
+  },
+  "lib/forms.test.ts": {
+    "mtime": 1782463545.5964847,
+    "ast_hash": "5eed1d5152752f59104a5a0c6aee0438",
+    "semantic_hash": "5eed1d5152752f59104a5a0c6aee0438"
+  },
+  "lib/forms.ts": {
+    "mtime": 1782463533.415628,
+    "ast_hash": "617b4ff90f79f918d7b43b4bbb3599f9",
+    "semantic_hash": "617b4ff90f79f918d7b43b4bbb3599f9"
+  },
+  "lib/funding-compliance.test.ts": {
+    "mtime": 1782466855.0076585,
+    "ast_hash": "1834a8dd90a14185343b861d055d86d3",
+    "semantic_hash": "1834a8dd90a14185343b861d055d86d3"
+  },
+  "lib/funding-compliance.ts": {
+    "mtime": 1782466740.9249244,
+    "ast_hash": "db51381a93deb5051574e55f25d1b364",
+    "semantic_hash": "db51381a93deb5051574e55f25d1b364"
+  },
+  "lib/gate.property.test.ts": {
+    "mtime": 1782468213.0916042,
+    "ast_hash": "9e705956769072c3101872f8d0c6c886",
+    "semantic_hash": "9e705956769072c3101872f8d0c6c886"
+  },
+  "lib/gate.test.ts": {
+    "mtime": 1782466766.1739178,
+    "ast_hash": "82254dce69a6409bf3953c93b24df35b",
+    "semantic_hash": "82254dce69a6409bf3953c93b24df35b"
+  },
+  "lib/gate.ts": {
+    "mtime": 1782466696.5891573,
+    "ast_hash": "0bdddefc156791d1772ca7fe71f8427a",
+    "semantic_hash": "0bdddefc156791d1772ca7fe71f8427a"
+  },
+  "lib/page-metadata.property.test.ts": {
+    "mtime": 1782992837.995674,
+    "ast_hash": "fb2b977736ccf5f209884ce7b0633cd4",
+    "semantic_hash": "fb2b977736ccf5f209884ce7b0633cd4"
+  },
+  "lib/platform-links.test.ts": {
+    "mtime": 1782441979.626119,
+    "ast_hash": "d1dc978bd531f38e0b7b674573033369",
+    "semantic_hash": "d1dc978bd531f38e0b7b674573033369"
+  },
+  "lib/platform-links.ts": {
+    "mtime": 1782911844.99867,
+    "ast_hash": "77fe0467986e410b32398b631b8edc57",
+    "semantic_hash": "77fe0467986e410b32398b631b8edc57"
+  },
+  "lib/provenance.property.test.ts": {
+    "mtime": 1782468339.098337,
+    "ast_hash": "2c21fc7cca5a50afc7a3cbef8dd9d991",
+    "semantic_hash": "2c21fc7cca5a50afc7a3cbef8dd9d991"
+  },
+  "lib/provenance.ts": {
+    "mtime": 1782468327.4118733,
+    "ast_hash": "4cf3cd9007bf95808aec7d91d71062ee",
+    "semantic_hash": "4cf3cd9007bf95808aec7d91d71062ee"
+  },
+  "lib/revocation.property.test.ts": {
+    "mtime": 1782467773.990455,
+    "ast_hash": "5f11f8d869b8457a099c98c50d08a2e9",
+    "semantic_hash": "5f11f8d869b8457a099c98c50d08a2e9"
+  },
+  "lib/revocation.test.ts": {
+    "mtime": 1782466724.0780067,
+    "ast_hash": "3c76fcf728418b9d58f5b35acb849e31",
+    "semantic_hash": "3c76fcf728418b9d58f5b35acb849e31"
+  },
+  "lib/revocation.ts": {
+    "mtime": 1782466667.8425436,
+    "ast_hash": "d92453db1e7bf78eb44143610acc6490",
+    "semantic_hash": "d92453db1e7bf78eb44143610acc6490"
+  },
+  "lib/sitemap.completeness.property.test.ts": {
+    "mtime": 1782993427.975799,
+    "ast_hash": "e4e43e4980730d38e887e9e06ef01908",
+    "semantic_hash": "e4e43e4980730d38e887e9e06ef01908"
+  },
+  "lib/sitemap.test.ts": {
+    "mtime": 1782467279.8426056,
+    "ast_hash": "664a26364719dbd37040810a33e9d103",
+    "semantic_hash": "664a26364719dbd37040810a33e9d103"
+  },
+  "lib/sitemap.ts": {
+    "mtime": 1782911864.103458,
+    "ast_hash": "5b2e57cb87beaa79ff71fb7a7fa4345c",
+    "semantic_hash": "5b2e57cb87beaa79ff71fb7a7fa4345c"
+  },
+  "lib/submissions.test.ts": {
+    "mtime": 1782470363.2901747,
+    "ast_hash": "639d6200fb4b566bede07a13a7efe8bd",
+    "semantic_hash": "639d6200fb4b566bede07a13a7efe8bd"
+  },
+  "lib/submissions.ts": {
+    "mtime": 1782466698.748189,
+    "ast_hash": "5cc5a0609ad596c803862127bcdb72d7",
+    "semantic_hash": "5cc5a0609ad596c803862127bcdb72d7"
+  },
+  "next.config.mjs": {
+    "mtime": 1782439970.3605206,
+    "ast_hash": "f53bf377566882e87c2a1687e6c30d77",
+    "semantic_hash": "f53bf377566882e87c2a1687e6c30d77"
+  },
+  "package.json": {
+    "mtime": 1782468914.3306408,
+    "ast_hash": "ab8d82c3d8ff7ba07dd8f5aa5a5f7eaa",
+    "semantic_hash": "ab8d82c3d8ff7ba07dd8f5aa5a5f7eaa"
+  },
+  "postcss.config.mjs": {
+    "mtime": 1782439974.1125145,
+    "ast_hash": "481fac0fdecd70e1821cc30b86030c1a",
+    "semantic_hash": "481fac0fdecd70e1821cc30b86030c1a"
+  },
+  "scaffold.smoke.test.ts": {
+    "mtime": 1782440102.529245,
+    "ast_hash": "a5a42d4625832af7977a7b91668fa588",
+    "semantic_hash": "a5a42d4625832af7977a7b91668fa588"
+  },
+  "tsconfig.json": {
+    "mtime": 1782440168.8095396,
+    "ast_hash": "86f82a01e9e8bbc2e8bfdd4f1bfe3c14",
+    "semantic_hash": "86f82a01e9e8bbc2e8bfdd4f1bfe3c14"
+  },
+  "vitest.config.ts": {
+    "mtime": 1782440040.9301398,
+    "ast_hash": "ee89472af3ce87a5bb37be9f858eb4d2",
+    "semantic_hash": "ee89472af3ce87a5bb37be9f858eb4d2"
+  },
+  "vitest.setup.ts": {
+    "mtime": 1782440044.574646,
+    "ast_hash": "c423067709b0f04af885a0332dacd6b7",
+    "semantic_hash": "c423067709b0f04af885a0332dacd6b7"
+  },
+  ".kiro/skills/graphify/SKILL.md": {
+    "mtime": 1782920531.8972106,
+    "ast_hash": "5bc28728a68fa52adb97f26b0ffa1324",
+    "semantic_hash": "5bc28728a68fa52adb97f26b0ffa1324"
+  },
+  ".kiro/skills/graphify/references/add-watch.md": {
+    "mtime": 1782920020.3091705,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": "d59d027fe449f06aa03905a01184e779"
+  },
+  ".kiro/skills/graphify/references/exports.md": {
+    "mtime": 1782920020.3161736,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": "9da2a2152e60a22f07f05fed5158f287"
+  },
+  ".kiro/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1782920020.3205037,
+    "ast_hash": "bf895ec4d4e40f5f66f7d31c2a9bd4a7",
+    "semantic_hash": "bf895ec4d4e40f5f66f7d31c2a9bd4a7"
+  },
+  ".kiro/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1782920020.329852,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": "cde13df085e4c492aeb7ba298a996d0d"
+  },
+  ".kiro/skills/graphify/references/hooks.md": {
+    "mtime": 1782920020.3308525,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": "3f545db6ce646650bb9de588f5512a27"
+  },
+  ".kiro/skills/graphify/references/query.md": {
+    "mtime": 1782920020.331853,
+    "ast_hash": "9e5aadc2c57ab561bc56600fcfa70735",
+    "semantic_hash": "9e5aadc2c57ab561bc56600fcfa70735"
+  },
+  ".kiro/skills/graphify/references/transcribe.md": {
+    "mtime": 1782920020.333857,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": "67b6a5fa6c0974e18f60db9f8932fbd8"
+  },
+  ".kiro/skills/graphify/references/update.md": {
+    "mtime": 1782920020.3358529,
+    "ast_hash": "c698309979460d0f02ba616417844399",
+    "semantic_hash": "c698309979460d0f02ba616417844399"
+  },
+  ".kiro/specs/witness-protocol-portal/design.md": {
+    "mtime": 1782992908.0156221,
+    "ast_hash": "6e5c5d5fcc7ec3624b3b4f31898e8314",
+    "semantic_hash": "6e5c5d5fcc7ec3624b3b4f31898e8314"
+  },
+  ".kiro/specs/witness-protocol-portal/requirements.md": {
+    "mtime": 1782992907.958633,
+    "ast_hash": "3cdd76ecde0429dbb4ce082851f446b3",
+    "semantic_hash": "3cdd76ecde0429dbb4ce082851f446b3"
+  },
+  ".kiro/specs/witness-protocol-portal/tasks.md": {
+    "mtime": 1782992878.9666739,
+    "ast_hash": "b70d0d09e2fd1514bbf5a0d9cefc1e72",
+    "semantic_hash": "b70d0d09e2fd1514bbf5a0d9cefc1e72"
+  },
+  ".kiro/steering/graphify.md": {
+    "mtime": 1782920531.9012127,
+    "ast_hash": "81be1a4201e0893879433cddab9ffd20",
+    "semantic_hash": "81be1a4201e0893879433cddab9ffd20"
+  },
+  "Articles and papers/Methodology Statement_ Engineering High-Signal Alignment Inheritance.md": {
+    "mtime": 1782992970.4751594,
+    "ast_hash": "b0a4cbaef51cf36a603feeebcf82123f",
+    "semantic_hash": "b0a4cbaef51cf36a603feeebcf82123f"
+  },
+  "Articles and papers/Operational Governance Framework_ Split-Plane Architecture and Witness Bridge Protocol.md": {
+    "mtime": 1782993090.2440307,
+    "ast_hash": "ed89c6582b832d488db3b7b2e0348395",
+    "semantic_hash": "ed89c6582b832d488db3b7b2e0348395"
+  },
+  "Articles and papers/The Witness Protocol_ A Participant Information Handbook.md": {
+    "mtime": 1782992996.0558684,
+    "ast_hash": "e3e23a75523c2fcb6c00c016330d87bc",
+    "semantic_hash": "e3e23a75523c2fcb6c00c016330d87bc"
+  },
+  "Articles and papers/Your Story, Secured_ A Guide to Our Data Privacy Architecture.md": {
+    "mtime": 1782992996.0352015,
+    "ast_hash": "5f360c740009016eeb6ea8424999e46d",
+    "semantic_hash": "5f360c740009016eeb6ea8424999e46d"
+  },
+  "Blog posts/2 Minutes to Midnight_ Why AI Needs Our Moral Struggles, Not Our Polite Answers.md": {
+    "mtime": 1782993034.0967877,
+    "ast_hash": "907976cca0ea48d2cd0e207c2c3764cb",
+    "semantic_hash": "907976cca0ea48d2cd0e207c2c3764cb"
+  },
+  "Blog posts/Inheriting the Inferno_ Why High-Signal Testimony is the Only Firewall for AGI.md": {
+    "mtime": 1782993034.0785315,
+    "ast_hash": "c9d96027c946e4f34c78d3bfca62529c",
+    "semantic_hash": "c9d96027c946e4f34c78d3bfca62529c"
+  },
+  "Blog posts/Why the Future of AI Alignment Isn\u2019t More Data\u2014It\u2019s Better _Inheritance_.md": {
+    "mtime": 1782993034.0583613,
+    "ast_hash": "3d7f48e23816e8b5d3207cbb7c6f2483",
+    "semantic_hash": "3d7f48e23816e8b5d3207cbb7c6f2483"
+  },
+  "README.md": {
+    "mtime": 1782992844.9537563,
+    "ast_hash": "8452855ec7b50907b48f10dbe1b24e5a",
+    "semantic_hash": "8452855ec7b50907b48f10dbe1b24e5a"
+  },
+  "pnpm-workspace.yaml": {
+    "mtime": 1783014267.1581037,
+    "ast_hash": "1a679aca621857eaa468a19987de77c3",
+    "semantic_hash": "1a679aca621857eaa468a19987de77c3"
+  },
+  "reports/Report_ Integrating Dialectical Reward Modeling into the Witness Protocol.md": {
+    "mtime": 1782992970.451988,
+    "ast_hash": "4516d4090f871b10a8574da8e1d325fe",
+    "semantic_hash": "4516d4090f871b10a8574da8e1d325fe"
+  },
+  "reports/Strategic Phase Report_ The _Summon the Witnesses_ Project.md": {
+    "mtime": 1782993055.8914561,
+    "ast_hash": "530699e22da5bc19d7e948a84c5438dd",
+    "semantic_hash": "530699e22da5bc19d7e948a84c5438dd"
+  },
+  "reports/Technical Report_ Operationalizing the _Capabilities Floor_ via The Witness Protocol.md": {
+    "mtime": 1782992939.8631613,
+    "ast_hash": "2d8fa89b255751640a15495da85aa85f",
+    "semantic_hash": "2d8fa89b255751640a15495da85aa85f"
+  },
+  "website-idea-drafts.txt": {
+    "mtime": 1782426652.369349,
+    "ast_hash": "d903466a86bfae1c3ced500fa01bcca7",
+    "semantic_hash": "d903466a86bfae1c3ced500fa01bcca7"
+  },
+  "Articles and papers/Architecting Moral Inheritance_ The Witness Protocol and the Shift from Behavioral Mimicry to Process-Supervised AI Alignment.pdf": {
+    "mtime": 1782420348.11416,
+    "ast_hash": "0b10fa679d2637fcd73c471f6ee1face",
+    "semantic_hash": "0b10fa679d2637fcd73c471f6ee1face"
+  },
+  "Articles and papers/Witness Protocol as High-Signal Alignment Data Infrastructure.pdf": {
+    "mtime": 1782415981.4597905,
+    "ast_hash": "5db2533f4e3fb446ec1dee7937ebaef7",
+    "semantic_hash": "5db2533f4e3fb446ec1dee7937ebaef7"
+  },
+  "Articles and papers/Witness Protocol in the AI Alignment Landscape.pdf": {
+    "mtime": 1782415600.4362216,
+    "ast_hash": "bb9fe1b5805b380e26a942f5b3555570",
+    "semantic_hash": "bb9fe1b5805b380e26a942f5b3555570"
+  },
+  "Articles and papers/Witness_Protocol_Whitepaper_v0_9.pdf": {
+    "mtime": 1782413383.2271452,
+    "ast_hash": "9fd38738471b03942955662fe8b00f60",
+    "semantic_hash": "9fd38738471b03942955662fe8b00f60"
+  },
+  "Articles and papers/witness-protocol-alignment-paper.pdf": {
+    "mtime": 1782416299.1054583,
+    "ast_hash": "9a8831a9bdb169623ab04e4205ba9441",
+    "semantic_hash": "9a8831a9bdb169623ab04e4205ba9441"
+  },
+  ".kiro/specs/witness-protocol-portal/evidence-11.2-token-funding.png": {
+    "mtime": 1782466986.4769063,
+    "ast_hash": "ec43df496594931f0ebf6a78af59036a",
+    "semantic_hash": "ec43df496594931f0ebf6a78af59036a"
+  },
+  ".kiro/specs/witness-protocol-portal/evidence-12.5-home-layout.png": {
+    "mtime": 1782467455.8673773,
+    "ast_hash": "aa1098bc403c63e62b637948f4516572",
+    "semantic_hash": "aa1098bc403c63e62b637948f4516572"
+  },
+  ".kiro/specs/witness-protocol-portal/evidence-12.5-skiplink-basalt.png": {
+    "mtime": 1782467364.5368319,
+    "ast_hash": "1d84691162708397ae23af02f0e0cdc0",
+    "semantic_hash": "1d84691162708397ae23af02f0e0cdc0"
+  },
+  ".kiro/specs/witness-protocol-portal/evidence-12.5-skiplink-paper.png": {
+    "mtime": 1782467503.1837864,
+    "ast_hash": "780f22eee07a82446f8be6341ab7772a",
+    "semantic_hash": "780f22eee07a82446f8be6341ab7772a"
+  },
+  ".kiro/specs/witness-protocol-portal/evidence-5.1-content-page.png": {
+    "mtime": 1782463946.095211,
+    "ast_hash": "5c2d14614a255c2203b8d37c59c55659",
+    "semantic_hash": "5c2d14614a255c2203b8d37c59c55659"
+  },
+  ".kiro/specs/witness-protocol-portal/revocation-completed.png": {
+    "mtime": 1782466838.045092,
+    "ast_hash": "adabfdc5edfdaa8044b4f4a319b327d4",
+    "semantic_hash": "adabfdc5edfdaa8044b4f4a319b327d4"
+  },
+  ".kiro/specs/witness-protocol-portal/scaffold-home.png": {
+    "mtime": 1782440219.4653752,
+    "ast_hash": "34543c2ba147eb1623d82371b191a807",
+    "semantic_hash": "34543c2ba147eb1623d82371b191a807"
+  },
+  ".kiro/specs/witness-protocol-portal/test-results/contact-page.png": {
+    "mtime": 1782467967.458598,
+    "ast_hash": "c7aa61a50ab3e40857783dea60c589be",
+    "semantic_hash": "c7aa61a50ab3e40857783dea60c589be"
+  },
+  ".kiro/specs/witness-protocol-portal/test-results/contact-success.png": {
+    "mtime": 1782468022.8915756,
+    "ast_hash": "713e8932e43715b2428b0e4aeedfa9d1",
+    "semantic_hash": "713e8932e43715b2428b0e4aeedfa9d1"
+  },
+  ".kiro/specs/witness-protocol-portal/verification/task-4.2-desktop.png": {
+    "mtime": 1782442195.776627,
+    "ast_hash": "baca3f65c0e48642b0756414b014215f",
+    "semantic_hash": "baca3f65c0e48642b0756414b014215f"
+  },
+  ".kiro/specs/witness-protocol-portal/verification/task-4.2-mobile-collapsed.png": {
+    "mtime": 1782442454.4445298,
+    "ast_hash": "0994a76194eb04e1be93a5ee5626e4d3",
+    "semantic_hash": "0994a76194eb04e1be93a5ee5626e4d3"
+  },
+  ".kiro/specs/witness-protocol-portal/verification/task-4.2-mobile-expanded.png": {
+    "mtime": 1782442470.9457998,
+    "ast_hash": "d931825097d4489bbdd03e60f67c636e",
+    "semantic_hash": "d931825097d4489bbdd03e60f67c636e"
+  },
+  ".kiro/specs/witness-protocol-portal/verification/task-4.3-not-found.png": {
+    "mtime": 1782441344.775728,
+    "ast_hash": "4ba28bb78f2f8ca01cb9cadc63ae7543",
+    "semantic_hash": "4ba28bb78f2f8ca01cb9cadc63ae7543"
+  },
+  "FaviTWP.png": {
+    "mtime": 1757598451.2477148,
+    "ast_hash": "7d5daf37d70246580e4a0a0be043dc0a",
+    "semantic_hash": "7d5daf37d70246580e4a0a0be043dc0a"
+  },
+  "app/icon.png": {
+    "mtime": 1778537844.2060966,
+    "ast_hash": "7d5daf37d70246580e4a0a0be043dc0a",
+    "semantic_hash": "7d5daf37d70246580e4a0a0be043dc0a"
+  },
+  "infographs/Architecting_a_Moral_Inheritance.png": {
+    "mtime": 1782417542.770357,
+    "ast_hash": "a7e99090e6caf8df32ec92ac05d4091d",
+    "semantic_hash": "a7e99090e6caf8df32ec92ac05d4091d"
+  },
+  "infographs/Engineering_AI_Moral_Inheritance.png": {
+    "mtime": 1782417769.429205,
+    "ast_hash": "0f5c169cdb165a59cd037230b4297155",
+    "semantic_hash": "0f5c169cdb165a59cd037230b4297155"
+  },
+  "infographs/Enhancing_the_Witness_Protocol_Layer.png": {
+    "mtime": 1782418610.0329618,
+    "ast_hash": "c36d187879d502f924f1cae2adf986dd",
+    "semantic_hash": "c36d187879d502f924f1cae2adf986dd"
+  },
+  "infographs/The_Witness_Protocol_AI_Framework.png": {
+    "mtime": 1782417814.482322,
+    "ast_hash": "96eec362423b2b34d1e47de67655b610",
+    "semantic_hash": "96eec362423b2b34d1e47de67655b610"
+  },
+  "infographs/The_Witness_Protocol_Architecture_Diagram.png": {
+    "mtime": 1782417988.6094863,
+    "ast_hash": "90d988d64cc3bbbdb4413177209964af",
+    "semantic_hash": "90d988d64cc3bbbdb4413177209964af"
+  },
+  "infographs/The_Witness_Protocol_Framework.png": {
+    "mtime": 1782417915.3057854,
+    "ast_hash": "5a82c9105acf0165d67ffce58b558b3c",
+    "semantic_hash": "5a82c9105acf0165d67ffce58b558b3c"
+  },
+  "infographs/Witness_Protocol_AI_Alignment_Pipeline.png": {
+    "mtime": 1782417737.2520936,
+    "ast_hash": "6d60d4fef6e4b0d5b9f707b29a2d369b",
+    "semantic_hash": "6d60d4fef6e4b0d5b9f707b29a2d369b"
+  },
+  "infographs/Witness_Protocol_Pipeline_Architecture.png": {
+    "mtime": 1782417659.7528417,
+    "ast_hash": "cfb1068c3e49a3163257bcd7f6a8aa6f",
+    "semantic_hash": "cfb1068c3e49a3163257bcd7f6a8aa6f"
+  },
+  "public/twp-logo-black.png": {
+    "mtime": 1778537844.1755593,
+    "ast_hash": "7d5daf37d70246580e4a0a0be043dc0a",
+    "semantic_hash": "7d5daf37d70246580e4a0a0be043dc0a"
+  },
+  "public/twp-logo-white.png": {
+    "mtime": 1778537844.1791308,
+    "ast_hash": "3c81cef1d05b34e4c8b8fdea1f16c813",
+    "semantic_hash": "3c81cef1d05b34e4c8b8fdea1f16c813"
+  },
+  "reports/theme-basalt-default.png": {
+    "mtime": 1782441620.9847472,
+    "ast_hash": "b944bce00ceadbfe2cf80996c78ce0ab",
+    "semantic_hash": "b944bce00ceadbfe2cf80996c78ce0ab"
+  },
+  "reports/theme-paper-toggled.png": {
+    "mtime": 1782441733.7472842,
+    "ast_hash": "b49e66bdb183c0d36526af26362fcbc4",
+    "semantic_hash": "b49e66bdb183c0d36526af26362fcbc4"
+  },
+  "test-results/fund-cash-section.png": {
+    "mtime": 1782468406.9354863,
+    "ast_hash": "08146531aef75cfcd450af2de7b0b03a",
+    "semantic_hash": "08146531aef75cfcd450af2de7b0b03a"
+  }
+}
